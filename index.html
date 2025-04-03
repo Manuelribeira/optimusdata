@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="pt-PT">
 <head>
-    <!-- Metadados existentes mantidos -->
     <title>Optimus Data | Análise de Dados & BI</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -10,7 +9,6 @@
     <meta property="og:title" content="Optimus Data - Soluções Inteligentes em Análise de Dados" />
     <meta property="og:image" content="https://manuelribeira.github.io/optimusdata/images/og-image.jpg" />
     
-    <!-- Schema.org para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,18 +24,18 @@
     }
     </script>
 
-    <!-- Links CSS -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <base href="https://manuelribeira.github.io/optimusdata/">
     
-    <!-- CSS Corrigido para Header e Logo -->
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS personalizado -->
     <style>
-        /* Correção para o header e logo */
+        /* Correções para o logo e navegação */
         #header {
             position: relative;
-            overflow: hidden;
         }
         
         #header .logo {
@@ -54,42 +52,23 @@
         }
         
         #header .content {
-            padding-top: 6rem; /* Espaço para o logo */
+            padding-top: 6rem;
         }
         
-        /* Garantir que o título não sobreponha */
-        #header .content .inner h1 {
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+        /* Correção para os links de navegação */
+        #main > article {
+            display: none;
         }
         
-        @media screen and (max-width: 736px) {
-            #header .content .inner h1 {
-                font-size: 1.8rem;
-            }
-            
-            #header .logo {
-                top: 1rem;
-                left: 1rem;
-            }
-            
-            #header .logo img {
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        /* Estilos anteriores mantidos */
-        .video-section {
-            padding: 4rem 2rem;
-            background: #f8f9fa;
-            text-align: center;
+        #main > article.active {
+            display: block;
         }
         
-        /* ... (outros estilos mantidos) ... */
+        /* Estilo para os botões ativos */
+        nav ul li a.active {
+            font-weight: bold;
+            color: #0066cc !important;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -97,17 +76,16 @@
     <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header Corrigido -->
+        <!-- Header corrigido -->
         <header id="header">
-            <!-- Logo posicionado corretamente -->
             <div class="logo">
-                <img src="images/logo.png" alt="Optimus Data - Especialistas em Análise de Dados" width="60" height="60">
+                <!-- Certifique-se que o caminho do logo está correto -->
+                <img src="images/logo.png" alt="Optimus Data" onerror="this.src='https://via.placeholder.com/60x60?text=Logo+Optimus';this.onerror=null;">
             </div>
             <div class="content">
                 <div class="inner">
-                    <!-- Título com espaçamento adequado -->
                     <h1>Potencialize o Seu Negócio com Dados Inteligentes</h1>
-                    <p class="hero-text">Da coleta à visualização: soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para empresas em Angola</p>
+                    <p>Da coleta à visualização: soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para empresas em Angola</p>
                     <div class="cta-buttons">
                         <a href="#servicos" class="button primary">Os Nossos Serviços</a>
                         <a href="#metodologia" class="button">A Nossa Metodologia</a>
@@ -116,23 +94,51 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#cases">Cases</a></li>
-                    <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#cases" class="nav-link">Cases</a></li>
+                    <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- Main Content -->
         <div id="main">
-            <!-- ... (conteúdo das seções mantido como anteriormente) ... -->
+            <!-- Serviços -->
+            <article id="servicos" class="active">
+                <h2 class="major">Nossos Serviços</h2>
+                <p>Conteúdo dos serviços aqui...</p>
+            </article>
+
+            <!-- Cases -->
+            <article id="cases">
+                <h2 class="major">Cases de Sucesso</h2>
+                <p>Conteúdo dos cases aqui...</p>
+            </article>
+
+            <!-- Metodologia -->
+            <article id="metodologia">
+                <h2 class="major">Nossa Metodologia</h2>
+                <p>Conteúdo da metodologia aqui...</p>
+            </article>
+
+            <!-- Sobre Nós -->
+            <article id="sobre">
+                <h2 class="major">Sobre Nós</h2>
+                <p>Conteúdo sobre a empresa aqui...</p>
+            </article>
+
+            <!-- Contato -->
+            <article id="contact">
+                <h2 class="major">Contato</h2>
+                <p>Formulário de contato aqui...</p>
+            </article>
         </div>
 
         <!-- Footer -->
         <footer id="footer">
-            <!-- ... (footer mantido como anteriormente) ... -->
+            <p class="copyright">&copy; Optimus Data <span id="year"></span></p>
         </footer>
     </div>
 
@@ -143,35 +149,62 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     
-    <!-- Script para controle de vídeo -->
+    <!-- Script para navegação e logo -->
     <script>
         // Atualiza o ano no footer
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Otimização de iframes
-        document.addEventListener("DOMContentLoaded", function() {
-            // Lazy loading para vídeos
-            const lazyVideos = [].slice.call(document.querySelectorAll("iframe[loading='lazy']"));
+        // Navegação entre seções
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostra a seção inicial
+            showSection('servicos');
             
-            if ("IntersectionObserver" in window) {
-                let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(video) {
-                        if (video.isIntersecting) {
-                            for (let source in video.target.dataset) {
-                                if (source.startsWith("src")) {
-                                    video.target.setAttribute(source, video.target.dataset[source]);
-                                }
-                            }
-                            lazyVideoObserver.unobserve(video.target);
-                        }
+            // Configura os listeners de navegação
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('href').substring(1);
+                    showSection(sectionId);
+                    
+                    // Atualiza a classe active nos links
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
                     });
+                    this.classList.add('active');
                 });
-                
-                lazyVideos.forEach(function(lazyVideo) {
-                    lazyVideoObserver.observe(lazyVideo);
-                });
+            });
+            
+            // Verifica o hash na URL ao carregar
+            if(window.location.hash) {
+                const sectionId = window.location.hash.substring(1);
+                showSection(sectionId);
             }
         });
+        
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            document.querySelectorAll('#main > article').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostra a seção selecionada
+            const activeSection = document.getElementById(sectionId);
+            if(activeSection) {
+                activeSection.classList.add('active');
+                window.location.hash = sectionId;
+            }
+        }
+        
+        // Fallback para o logo caso não carregue
+        function checkLogo() {
+            const logo = document.querySelector('#header .logo img');
+            setTimeout(() => {
+                if(logo.naturalWidth === 0) {
+                    logo.src = 'https://via.placeholder.com/60x60?text=Logo+Optimus';
+                }
+            }, 1000);
+        }
+        window.addEventListener('load', checkLogo);
     </script>
 </body>
 </html>

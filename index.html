@@ -31,6 +31,9 @@
     <!-- Favicon -->
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <!-- CSS personalizado -->
     <style>
         /* Reset e estilos base */
@@ -157,6 +160,114 @@
             margin-top: 40px;
         }
         
+        /* Estilos para a seção de contato */
+        .contact-section {
+            padding: 2rem;
+            background: #fff;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info .icon {
+            margin-right: 1rem;
+            color: #0066cc;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            color: #0066cc;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: #004a99;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+        
+        #formStatus {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
         /* Media queries para dispositivos móveis */
         @media (max-width: 768px) {
             #header {
@@ -189,6 +300,14 @@
             
             .tech-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 1.5rem;
             }
         }
         
@@ -256,422 +375,4 @@
                     <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
                     <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <div id="main">
-            <!-- Serviços -->
-            <article id="servicos" class="active">
-                <!-- ... (conteúdo dos serviços mantido igual) ... -->
-            </article>
-
-            <!-- Cases -->
-            <article id="cases">
-                <!-- ... (conteúdo dos cases mantido igual) ... -->
-            </article>
-
-            <!-- Metodologia -->
-            <article id="metodologia">
-                <!-- ... (conteúdo da metodologia mantido igual) ... -->
-            </article>
-
-            <!-- Sobre Nós -->
-            <article id="sobre">
-                <!-- ... (conteúdo sobre nós mantido igual) ... -->
-            </article>
-
-            <!-- Contato -->
-            <article id="contact">
-    <h2 class="major">Entre em Contato</h2>
-    
-    <section class="contact-section">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Informações de Contato</h3>
-                <ul>
-                    <li>
-                        <i class="icon fas fa-map-marker-alt"></i>
-                        <span>Luanda, Angola</span>
-                    </li>
-                    <li>
-                        <i class="icon fas fa-phone"></i>
-                        <span>+244 924 990 517</span>
-                    </li>
-                    <li>
-                        <i class="icon fas fa-envelope"></i>
-                        <span>contato@optimusdata.com</span>
-                    </li>
-                    <li>
-                        <i class="icon fas fa-clock"></i>
-                        <span>Seg-Sex: 9:00 - 18:00</span>
-                    </li>
-                </ul>
-                
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <h3>Envie-nos uma Mensagem</h3>
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nome Completo*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Assunto*</label>
-                        <select id="subject" name="subject" required>
-                            <option value="" disabled selected>Selecione um assunto</option>
-                            <option value="consultoria">Consultoria</option>
-                            <option value="orcamento">Orçamento</option>
-                            <option value="suporte">Suporte Técnico</option>
-                            <option value="parceria">Parceria</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Mensagem*</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="button primary">Enviar Mensagem</button>
-                    </div>
-                    
-                    <div id="formStatus"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-</article>
-
-<style>
-    /* Estilos para a seção de contato */
-    .contact-section {
-        padding: 2rem;
-        background: #fff;
-    }
-    
-    .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        background: #f8f9fa;
-        padding: 2rem;
-        border-radius: 8px;
-    }
-    
-    .contact-info h3, .contact-form h3 {
-        color: #0066cc;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-    }
-    
-    .contact-info ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .contact-info li {
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-    }
-    
-    .contact-info .icon {
-        margin-right: 1rem;
-        color: #0066cc;
-        width: 20px;
-        text-align: center;
-    }
-    
-    .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-    
-    .social-icon {
-        color: #0066cc;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-    }
-    
-    .social-icon:hover {
-        color: #004a99;
-    }
-    
-    .contact-form {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 1rem;
-    }
-    
-    .form-group textarea {
-        resize: vertical;
-    }
-    
-    #formStatus {
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 4px;
-        display: none;
-    }
-    
-    .success {
-        background: #d4edda;
-        color: #155724;
-    }
-    
-    .error {
-        background: #f8d7da;
-        color: #721c24;
-    }
-    
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .contact-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .contact-info, .contact-form {
-            padding: 1.5rem;
-        }
-    }
-</style>
-
-<script>
-    // Script para o formulário de contato
-    document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simulação de envio (substitua pelo código real de envio)
-                const formData = new FormData(contactForm);
-                
-                // Aqui você pode adicionar AJAX ou fetch para enviar o formulário
-                // Exemplo com fetch:
-                /*
-                fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        showFormStatus('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Erro ao enviar mensagem');
-                    }
-                })
-                .catch(error => {
-                    showFormStatus('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.', 'error');
-                });
-                */
-                
-                // Simulação de sucesso (remova isso quando implementar o envio real)
-                setTimeout(() => {
-                    showFormStatus('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-                    contactForm.reset();
-                }, 1000);
-            });
-        }
-        
-        function showFormStatus(message, type) {
-            formStatus.textContent = message;
-            formStatus.className = type;
-            formStatus.style.display = 'block';
-            
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
-        }
-    });
-</script>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Optimus Data <span id="year"></span></p>
-        </footer>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <!-- Script para navegação e logo -->
-    <script>
-        // Atualiza o ano no footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Navegação entre seções
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mostra a seção inicial
-            showSection('servicos');
-            
-            // Configura os listeners de navegação
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const sectionId = this.getAttribute('href').substring(1);
-                    showSection(sectionId);
-                    
-                    // Atualiza a classe active nos links
-                    document.querySelectorAll('.nav-link').forEach(navLink => {
-                        navLink.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    // Scroll suave para o topo no mobile
-                    if (window.innerWidth <= 768) {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Verifica o hash na URL ao carregar
-            if(window.location.hash) {
-                const sectionId = window.location.hash.substring(1);
-                showSection(sectionId);
-            }
-            
-            // Verificação robusta do logo
-            checkLogo();
-            
-            // Ajuste de layout para mobile
-            handleMobileLayout();
-        });
-        
-        function showSection(sectionId) {
-            // Esconde todas as seções
-            document.querySelectorAll('#main > article').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Mostra a seção selecionada
-            const activeSection = document.getElementById(sectionId);
-            if(activeSection) {
-                activeSection.classList.add('active');
-                window.location.hash = sectionId;
-            }
-        }
-        
-        // Verificação robusta do logo
-        function checkLogo() {
-            const logo = document.querySelector('#header .logo img');
-            
-            // Primeiro verifica se o elemento existe
-            if (!logo) {
-                console.error('Elemento do logo não encontrado');
-                return;
-            }
-            
-            // Verifica após 1 segundo se a imagem carregou
-            setTimeout(() => {
-                // Se não carregou ou é placeholder
-                if (!logo.complete || logo.naturalWidth === 0 || logo.src.includes('placeholder')) {
-                    console.log('Logo não carregado - acionando fallbacks');
-                    
-                    // Tenta caminho absoluto
-                    const absPath = 'https://' + window.location.hostname + '/images/logo.png';
-                    logo.src = absPath;
-                    
-                    // Verifica novamente após 1 segundo
-                    setTimeout(() => {
-                        if (!logo.complete || logo.naturalWidth === 0) {
-                            // Fallback final - substitui por SVG ou texto
-                            const logoContainer = document.querySelector('#header .logo');
-                            if (logoContainer) {
-                                logoContainer.innerHTML = `
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60">
-                                        <rect width="100" height="100" fill="#0066cc" rx="10"/>
-                                        <text x="50" y="60" font-family="Arial" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle">OD</text>
-                                    </svg>
-                                `;
-                            }
-                        }
-                    }, 1000);
-                }
-            }, 1000);
-        }
-        
-        // Ajustes específicos para mobile
-        function handleMobileLayout() {
-            if (window.innerWidth <= 768) {
-                // Ajustes específicos para mobile
-                document.querySelectorAll('.service-card, .step').forEach(element => {
-                    element.style.marginBottom = '20px';
-                });
-                
-                // Garante que os CTAs sejam full-width em mobile
-                document.querySelectorAll('.button').forEach(button => {
-                    button.style.width = '100%';
-                    button.style.margin = '5px 0';
-                });
-            }
-            
-            // Listener para redimensionamento
-            window.addEventListener('resize', function() {
-                handleMobileLayout();
-            });
-        }
-    </script>
-</body>
-</html>
+            </

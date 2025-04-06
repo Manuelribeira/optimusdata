@@ -34,7 +34,7 @@
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     
     <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS personalizado -->
     <style>
@@ -84,243 +84,124 @@
             background: var(--accent-color);
         }
         
-        /* Header otimizado */
-        #header {
+        /* Banner no Topo */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
             position: relative;
-            padding-top: 80px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         
-        #header .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 60px;
-            height: 60px;
-            z-index: 1001;
-            transition: transform 0.3s ease;
-        }
-        
-        #header .logo:hover {
-            transform: scale(1.1);
-        }
-        
-        #header .logo img {
-            width: 100%;
-            height: auto;
-            display: block;
-            max-width: 100%;
-        }
-        
-        /* Seção de Serviços Aprimorada */
-        .services-section {
-            padding: 3rem 0;
-        }
-        
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .service-intro {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #555;
+        .hero-content {
             max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
         }
         
-        .services-grid {
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Seção: Setores que Transformamos */
+        .sectors-section {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .sectors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin-top: 3rem;
         }
         
-        .service-card {
+        .sector-card {
             background: white;
-            border-radius: 10px;
             padding: 2rem;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            text-align: center;
             border-top: 4px solid var(--primary-color);
         }
         
-        .service-card:hover {
+        .sector-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        .service-card .icon {
+        .sector-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
         }
         
-        .service-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .service-card li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .service-card li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        
-        .service-benefit {
-            font-style: italic;
-            padding: 1rem;
-            background: var(--light-bg);
-            border-left: 3px solid var(--accent-color);
-            margin-top: 1.5rem;
-        }
-        
-        /* Seção de Metodologia Aprimorada */
-        .methodology-section {
-            padding: 3rem 0;
-            background: var(--light-bg);
-        }
-        
-        .methodology-steps {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .step {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .step-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
+        /* Seção de Contacto */
+        .contact-section {
+            padding: 5rem 0;
             background: var(--primary-color);
             color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
         }
         
-        .step-content ul {
-            columns: 2;
-            list-style-type: none;
-            padding: 0;
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 2rem;
         }
         
-        .step-content li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .step-content li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .tech-category {
+        #contactForm {
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        /* Formulário de Contato */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-        }
-        
-        .contact-info ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-info li {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-info .icon {
-            margin-right: 1rem;
-            color: var(--primary-color);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icon:hover {
-            color: var(--secondary-color);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
@@ -331,6 +212,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
+            color: var(--text-color);
             font-weight: 500;
         }
         
@@ -353,68 +235,35 @@
         }
         
         .form-group textarea {
-            resize: vertical;
             min-height: 150px;
+            resize: vertical;
         }
         
-        button[type="submit"] {
-            background: var(--primary-color);
+        .btn-submit {
+            background: var(--accent-color);
             color: white;
             border: none;
             padding: 1rem 2rem;
+            font-size: 1rem;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 1rem;
             transition: background 0.3s;
+            width: 100%;
+            font-weight: 600;
         }
         
-        button[type="submit"]:hover {
-            background: var(--secondary-color);
-        }
-        
-        #formStatus {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 4px;
-            display: none;
-        }
-        
-        .success {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .error {
-            background: #f8d7da;
-            color: #721c24;
+        .btn-submit:hover {
+            background: #0088cc;
         }
         
         /* Responsividade */
-        @media (max-width: 992px) {
-            .step-content ul {
-                columns: 1;
-            }
-        }
-        
         @media (max-width: 768px) {
-            #header {
-                padding-top: 70px;
+            .hero-banner h1 {
+                font-size: 2.2rem;
             }
             
-            #header .logo {
-                width: 50px;
-                height: 50px;
-                top: 15px;
-                left: 15px;
-            }
-            
-            .contact-container,
-            .step {
-                grid-template-columns: 1fr;
-            }
-            
-            .step {
-                gap: 1rem;
+            .hero-banner p {
+                font-size: 1rem;
             }
             
             .major {
@@ -423,12 +272,22 @@
         }
         
         @media (max-width: 480px) {
-            .major {
+            .hero-banner {
+                padding: 3rem 0;
+            }
+            
+            .hero-banner h1 {
                 font-size: 1.8rem;
             }
             
-            .services-grid {
-                grid-template-columns: 1fr;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -438,7 +297,19 @@
     <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header otimizado -->
+        <!-- Banner no Topo -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Transforme Dados em Decisões Estratégicas</h1>
+                <p>Soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para impulsionar o seu negócio em Angola</p>
+                <div class="cta-buttons">
+                    <a href="#servicos" class="btn btn-primary">As Nossas Soluções</a>
+                    <a href="#contact" class="btn btn-secondary">Fale Connosco</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Header -->
         <header id="header">
             <div class="logo">
                 <img src="images/logo.png" alt="Optimus Data - Especialistas em Business Intelligence" 
@@ -446,297 +317,36 @@
                      onerror="this.onerror=null;this.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text x=\'10\' y=\'50\' font-size=\'30\'>Optimus</text></svg>';"
                      onerror="this.onerror=null;this.textContent='Optimus Data';">
             </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Transforme Dados em Decisões Estratégicas</h1>
-                    <p>Soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para impulsionar seu negócio</p>
-                    <div class="cta-buttons">
-                        <a href="#servicos" class="button primary"> As nossas Soluções</a>
-                        <a href="#metodologia" class="button">Como Trabalhamos</a>
-                    </div>
-                </div>
-            </div>
             <nav>
                 <ul>
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li><a href="#cases" class="nav-link">Cases</a></li>
                     <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- Main Content -->
         <div id="main">
-            <!-- Serviços Otimizados -->
+
+            <!-- Serviços -->
             <article id="servicos" class="active">
-                <section class="services-section">
-                    <div class="services-container">
-                        <h1 class="major">Soluções de Business Intelligence & Analytics</h1>
-                        <p class="service-intro">Na Optimus Data, somos especialistas em transformar dados complexos em <strong>insights acionáveis</strong> que impulsionam resultados tangíveis. Nossas soluções personalizadas combinam tecnologia de ponta com conhecimento profundo do mercado para oferecer a você uma <strong>vantagem competitiva baseada em dados</strong>.</p>
-                        
-                        <div class="services-grid">
-                            <!-- Serviço 1 - BI Moderno -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-chart-line"></i></div>
-                                <h2>BI & Analytics Avançado</h2>
-                                <p>Dashboard inteligentes que revelam oportunidades escondidas nos seus dados:</p>
-                                <ul>
-                                    <li>Implementação de <strong>Power BI</strong> e Tableau sob medida</li>
-                                    <li>Visualizações interativas e autoatualizáveis</li>
-                                    <li>KPI's estratégicos para cada área do negócio</li>
-                                    <li>Integração com múltiplas fontes de dados</li>
-                                    <li>Relatórios automatizados para gestão ágil</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Tomada de decisão 3x mais rápida com visão 360° do seu negócio.</p>
-                            </div>
-                            
-                            <!-- Serviço 2 - Data Science -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-brain"></i></div>
-                                <h2>Data Science & Machine Learning</h2>
-                                <p>Algoritmos preditivos que antecipam tendências e comportamentos:</p>
-                                <ul>
-                                    <li>Previsão de demanda com 90% de acurácia</li>
-                                    <li>Segmentação avançada de clientes</li>
-                                    <li>Detecção de fraudes em tempo real</li>
-                                    <li>Análise de sentimentos em redes sociais</li>
-                                    <li>Modelos de <strong>churn prediction</strong> personalizados</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Redução de 40% nos riscos operacionais e identificação de oportunidades antes da concorrência.</p>
-                            </div>
-                            
-                            <!-- Serviço 3 - Automação -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-robot"></i></div>
-                                <h2>Automação & ETL com Python</h2>
-                                <p>Soluções personalizadas para otimizar processos de dados:</p>
-                                <ul>
-                                    <li>Web scraping inteligente para coleta de dados</li>
-                                    <li>Pipelines ETL (Extract, Transform, Load) robustos</li>
-                                    <li>Automação de relatórios complexos</li>
-                                    <li>Integração entre sistemas desconectados</li>
-                                    <li>Processamento de grandes volumes de dados</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Redução de 70% no tempo de processamento de dados e eliminação de erros manuais.</p>
-                            </div>
-                            
-                            <!-- Serviço 4 - Análise Preditiva -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-crystal-ball"></i></div>
-                                <h2>Análise Preditiva & Prescritiva</h2>
-                                <p>Vá além dos relatórios históricos com projeções precisas:</p>
-                                <ul>
-                                    <li>Modelos de séries temporais para previsão de mercado</li>
-                                    <li>Simulação de cenários estratégicos</li>
-                                    <li>Otimização de preços dinâmicos</li>
-                                    <li>Gestão preditiva de estoque e logística</li>
-                                    <li>Análise de impacto de decisões</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Aumento de 25% na eficiência operacional com decisões baseadas em projeções confiáveis.</p>
-                            </div>
-                            
-                            <!-- Serviço 5 - Consultoria -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-chess"></i></div>
-                                <h2>Estratégia & Governança de Dados</h2>
-                                <p>Transforme dados em ativo estratégico:</p>
-                                <ul>
-                                    <li>Diagnóstico de maturidade analítica</li>
-                                    <li>Roadmap de implementação de BI</li>
-                                    <li>Arquitetura de dados corporativa</li>
-                                    <li>Governança e qualidade de dados</li>
-                                    <li>Conformidade com LGPD e segurança</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Estrutura de dados escalável que suporta o crescimento do negócio.</p>
-                            </div>
-            
-                        
-                     
+                <!-- Conteúdo existente dos serviços -->
+                <!-- ... -->
+            </article>
+
             <!-- Cases de Sucesso -->
             <article id="cases">
                 <h2 class="major">Cases de Sucesso</h2>
                 <p>Conteúdo dos cases aqui...</p>
             </article>
 
-            <!-- Metodologia Otimizada -->
+            <!-- Metodologia -->
             <article id="metodologia">
-                <section class="methodology-section">
-                    <div class="methodology-steps">
-                        <h1 class="major">Metodologia Data-Driven Comprovada</h1>
-                        <p class="methodology-intro">Na Optimus Data, desenvolvemos uma abordagem <strong>exclusiva e orientada a resultados</strong> que já ajudou dezenas de empresas em Angola a transformar dados em vantagem competitiva. Nossa metodologia combina as melhores práticas globais de <em>Data Science</em> com profundo conhecimento do mercado africano.</p>
-                        
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">1</span>
-                                <h3>Imersão no Negócio</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Entendemos profundamente seus desafios através de:</p>
-                                <ul>
-                                    <li>Workshops com stakeholders-chave</li>
-                                    <li>Análise de processos operacionais</li>
-                                    <li>Diagnóstico de maturidade analítica</li>
-                                    <li>Identificação de KPIs críticos</li>
-                                    <li>Mapeamento de fontes de dados</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Design Thinking, Canvas de Analytics, Python Pandas</p>
-                                <p class="service-benefit"><strong>Resultado:</strong> Definição clara de objetivos alinhados à estratégia do negócio.</p>
-                            </div>
-                        </div>
-
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">2</span>
-                                <h3>Engenharia de Dados</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Construímos a base de dados perfeita para análise:</p>
-                                <ul>
-                                    <li>Integração de fontes de dados dispersas</li>
-                                    <li>Limpeza e padronização automatizada</li>
-                                    <li>Pipeline de dados escalável</li>
-                                    <li>Armazenamento otimizado para análise</li>
-                                    <li>Governança e documentação</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Apache Airflow, PySpark, SQL, Azure Data Factory</p>
-                                <p class="service-benefit"><strong>Case Real:</strong> Redução de 80% no tempo de preparação de dados para um banco angolano.</p>
-                            </div>
-                        </div>
-
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">3</span>
-                                <h3>Análise Avançada</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Extraímos insights poderosos dos seus dados:</p>
-                                <ul>
-                                    <li>Modelos preditivos personalizados</li>
-                                    <li>Análise de cenários e simulações</li>
-                                    <li>Segmentação avançada</li>
-                                    <li>Detecção de padrões e anomalias</li>
-                                    <li>Testes estatísticos rigorosos</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Scikit-learn, TensorFlow, XGBoost, R</p>
-                                <p class="service-benefit"><strong>Vantagem Competitiva:</strong> Algoritmos treinados com dados locais para máxima relevância.</p>
-                            </div>
-                        </div>
-
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">4</span>
-                                <h3>Visualização Inteligente</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Transformamos complexidade em clareza:</p>
-                                <ul>
-                                    <li>Dashboards executivos intuitivos</li>
-                                    <li>Relatórios automatizados</li>
-                                    <li>Visualizações interativas</li>
-                                    <li>Soluções offline para áreas remotas</li>
-                                    <li>Mobile-friendly</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Power BI, Tableau, Plotly Dash</p>
-                                <p class="service-benefit"><strong>Resultado:</strong> Insights acionáveis em tempo real para todos os níveis da organização.</p>
-                            </div>
-                        </div>
-
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">5</span>
-                                <h3>Implantação & Capacitação</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Garantimos sua autonomia com:</p>
-                                <ul>
-                                    <li>Treinamentos práticos em Português</li>
-                                    <li>Documentação técnica simplificada</li>
-                                    <li>Manuais do usuário personalizados</li>
-                                    <li>Suporte pós-implantação</li>
-                                    <li>Atualizações periódicas</li>
-                                </ul>
-                                <p><em>Diferencial:</strong> Adaptamos a complexidade técnica ao perfil de cada usuário.</p>
-                                <p class="service-benefit"><strong>Resultado:</strong> Equipe empoderada para extrair valor contínuo dos dados.</p>
-                            </div>
-                        </div>
-
-                        <div class="technology-stack">
-                            <h2>Tecnologias que Impulsionam Resultados</h2>
-                            <div class="tech-grid">
-                                <div class="tech-category">
-                                    <h3><i class="fas fa-chart-bar"></i> Análise & BI</h3>
-                                    <ul>
-                                        <li>Power BI Premium</li>
-                                        <li>Tableau</li>
-                                        <li>Python (Pandas, NumPy)</li>
-                                        <li>SQL Avançado</li>
-                                    </ul>
-                                </div>
-                                <div class="tech-category">
-                                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-                                    <ul>
-                                        <li>Scikit-learn</li>
-                                        <li>TensorFlow/Keras</li>
-                                        <li>PyTorch</li>
-                                        <li>XGBoost</li>
-                                    </ul>
-                                </div>
-                                <div class="tech-category">
-                                    <h3><i class="fas fa-database"></i> Engenharia de Dados</h3>
-                                    <ul>
-                                        <li>Apache Spark</li>
-                                        <li>Airflow</li>
-                                        <li>Snowflake</li>
-                                        <li>Azure Data Factory</li>
-                                    </ul>
-                                </div>
-                                <div class="tech-category">
-                                    <h3><i class="fas fa-cloud"></i> Infraestrutura</h3>
-                                    <ul>
-                                        <li>Azure Machine Learning</li>
-                                        <li>AWS SageMaker</li>
-                                        <li>Docker/Kubernetes</li>
-                                        <li>Databricks</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="methodology-results">
-                            <h2>Resultados Comprovados</h2>
-                            <div class="results-grid">
-                                <div class="result-item">
-                                    <div class="result-value">+40%</div>
-                                    <div class="result-desc">de eficiência operacional em projetos implementados</div>
-                                </div>
-                                <div class="result-item">
-                                    <div class="result-value">12-18</div>
-                                    <div class="result-desc">meses é o ROI médio de nossos projetos</div>
-                                </div>
-                                <div class="result-item">
-                                    <div class="result-value">100%</div>
-                                    <div class="result-desc">dos clientes recomendam nossos serviços</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="seo-optimized">
-                            <h2 class="hidden">Business Intelligence</h2>
-                            <div class="seo-content">
-                                <p>Como <strong>líderes em consultoria de dados em Luanda</strong>, a Optimus Data combina expertise internacional com conhecimento profundo do mercado. A nossa metodologia foi validada em <strong>projetos de transformação digital em diversos setores</strong>:</p>
-                                <ul>
-                                    <li>Bancário: Modelos de scoring de crédito adaptados à realidade</li>
-                                    <li>Telecomunicações: Redução de 32% no churn com machine learning</li>
-                                    <li>Comércio: Aumento de 18% nas vendas com otimização de preços dinâmicos</li>
-                                    <li>Saúde: Redução de 27% nos tempos de espera com análise preditiva</li>
-                                </ul>
-                                <p>Se procura <strong>consultoria em Power BI</strong> ou soluções personalizadas de <strong>análise preditiva para empresas africanas</strong>, nossa abordagem comprovada oferece a combinação perfeita entre tecnologia global e insights locais.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <!-- Conteúdo existente da metodologia -->
+                <!-- ... -->
             </article>
 
             <!-- Sobre Nós -->
@@ -745,68 +355,99 @@
                 <p>Conteúdo sobre a empresa aqui...</p>
             </article>
 
-            <!-- Seção de Contato -->
-    <section class="contact-section">
-        <div class="container">
-            <h2>Fale Conosco</h2>
-            <form id="contactForm" action="/submit-form" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Seu Nome" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
-                </div>
-                <div class="form-group">
-                    <select id="sector" name="sector" required>
-                        <option value="">Selecione seu setor</option>
-                        <option value="financeiro">Financeiro</option>
-                        <option value="varejo">Comércio</option>
-                        <option value="energia">Energia</option>
-                        <option value="telecomunicacoes">Telecomunicações</option>
-                        <option value="saude">Saúde</option>
-                        <option value="manufatura">Manufatura</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
+            <!-- Seção: Setores que Transformamos -->
+            <article id="setores">
+                <section class="sectors-section">
+                    <div class="container">
+                        <h2 class="major">Setores que Transformamos com Dados</h2>
+                        <div class="sectors-grid">
+                            <!-- Setor Financeiro -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Financeiro</h3>
+                                <p>Otimização de riscos, deteção de fraudes e personalização de serviços bancários através de analytics avançado.</p>
+                            </div>
+                            
+                            <!-- Comércio -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h3>Comércio</h3>
+                                <p>Previsão de procura, gestão de inventário e experiências personalizadas para o consumidor.</p>
+                            </div>
+                            
+                            <!-- Energia -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Energia</h3>
+                                <p>Otimização de redes elétricas, manutenção preditiva e gestão de recursos energéticos.</p>
+                            </div>
+                            
+                            <!-- Telecomunicações -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-tower-cell"></i>
+                                </div>
+                                <h3>Telecomunicações</h3>
+                                <p>Melhoria da qualidade de serviço, redução de churn e otimização de redes.</p>
+                            </div>
+                            
+                            <!-- Saúde -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <h3>Saúde</h3>
+                                <p>Diagnóstico assistido, gestão hospitalar e pesquisa médica com IA.</p>
+                            </div>
+                            
+                            <!-- Manufatura -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h3>Manufatura</h3>
+                                <p>Manutenção preditiva, controlo de qualidade automatizado e otimização da cadeia de suprimentos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
 
-    <script>
-        // Validação do formulário
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const sector = document.getElementById('sector').value;
-            const message = document.getElementById('message').value.trim();
-            
-            // Validação de campos vazios
-            if (!name || !email || !sector || !message) {
-                event.preventDefault();
-                alert('Por favor, preencha todos os campos do formulário.');
-                return false;
-            }
-            
-            // Validação de e-mail
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                event.preventDefault();
-                alert('Por favor, insira um endereço de e-mail válido.');
-                return false;
-            }
-            
-            // Se tudo estiver válido, o formulário será enviado
-            return true;
-        });
-
-        // Feedback visual ao enviar o formulário (simulado)
-        document.getElementById('contactForm').addEventListener('submit', function() {
-            alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
-        });
-    </script>
-</body>
-</html>
+            <!-- Seção de Contacto -->
+            <article id="contact">
+                <section class="contact-section">
+                    <div class="container">
+                        <h2 class="major">Fale Connosco</h2>
+                        <form id="contactForm" action="/submit-form" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="O seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="O seu e-mail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sector">Setor de Atividade</label>
+                                <select id="sector" name="sector" required>
+                                    <option value="">Selecione o seu setor</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="comercio">Comércio</option>
+                                    <option value="energia">Energia</option>
+                                    <option value="telecomunicacoes">Telecomunicações</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="manufatura">Manufatura</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" placeholder="A sua mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Enviar Mensagem</button>

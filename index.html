@@ -1,979 +1,173 @@
 <!DOCTYPE HTML>
 <html lang="pt-PT">
 <head>
-    <title>Optimus Data | Consultoria & Análise de Dados</title>
+    <title>Optimus Data | Consultoria em Business Intelligence & Análise de Dados</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
     <meta name="description" content="Líder em consultoria de dados em Angola. Soluções completas em BI, Machine Learning e Power BI para transformar seus dados em vantagem competitiva. +50 projetos entregues." />
-    <meta name="keywords" content="consultoria dados Luanda, business intelligence Angola, análise preditiva, Power BI consultor, machine learning empresas, dashboard analytics, transformação digital dados" />
+    <meta name="keywords" content="consultoria dados Luanda, business intelligence Angola, análise preditiva, Power BI consultor, machine learning empresas" />
     <meta property="og:title" content="Optimus Data - Soluções Inteligentes em Análise de Dados" />
     <meta property="og:image" content="https://manuelribeira.github.io/optimusdata/images/og-image.jpg" />
     
-    <!-- Schema.org markup para Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Optimus Data",
-      "description": "Consultoria especializada em análise de dados e business intelligence",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Luanda",
-        "addressCountry": "AO"
-      },
-      "telephone": "+244924990517",
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "priceRange": "$$$",
-      "image": "https://manuelribeira.github.io/optimusdata/images/logo.png",
-      "url": "https://manuelribeira.github.io/optimusdata/"
-    }
-    </script>
-
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-    
-    <!-- Font Awesome para ícones -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS personalizado responsivo -->
     <style>
-        /* Variáveis CSS para cores e tamanhos */
-        :root {
-            --primary-color: #0066cc;
-            --secondary-color: #004a99;
-            --accent-color: #00aaff;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --dark-bg: #2c3e50;
-            --success-color: #28a745;
-            --warning-color: #ffc107;
-            --error-color: #dc3545;
-            --font-main: 'Open Sans', sans-serif;
-            --font-heading: 'Roboto', sans-serif;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        /* Reset e estilos base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            color: var(--text-color);
-            overflow-x: hidden;
-            background-color: #fff;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-        
-        .button:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .button.primary {
-            background: var(--accent-color);
-        }
-        
-        .button.primary:hover {
-            background: var(--primary-color);
-        }
-        
-        .major {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .major:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--accent-color);
-        }
-        
-        /* Header responsivo */
-        #header {
-            position: relative;
-            padding-top: 100px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        #header .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 60px;
-            height: 60px;
-            z-index: 1001;
-            transition: var(--transition);
-        }
-        
-        #header .logo:hover {
-            transform: scale(1.1);
-        }
-        
-        #header .logo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        #header .content {
-            padding: 2rem 1rem;
-        }
-        
-        #header .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        #header .content p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* Navegação responsiva */
-        nav {
-            background: var(--dark-bg);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-        }
-        
-        nav ul li a:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        
-        /* Seção de Serviços responsiva */
-        .services-section {
-            padding: 3rem 0;
-            background: white;
-        }
-        
-        .service-intro {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #555;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .service-card .icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            margin: 1.5rem 0;
-            flex-grow: 1;
-        }
-        
-        .service-card li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .service-card li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        
-        .service-benefit {
-            font-style: italic;
-            padding: 1rem;
-            background: var(--light-bg);
-            border-left: 3px solid var(--accent-color);
-            margin-top: 1.5rem;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-        }
-        
-        /* Setores que atendemos */
-        .sectors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .sector {
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .sector h4 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .sector h4 i {
-            color: var(--accent-color);
-        }
-        
-        /* Seção de Metodologia */
-        .methodology-section {
-            padding: 3rem 0;
-            background: var(--light-bg);
-        }
-        
-        .methodology-intro {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-        
-        .step {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .step-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .step-content ul {
-            columns: 2;
-            list-style-type: none;
-            padding: 0;
-            gap: 2rem;
-        }
-        
-        .step-content li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-            break-inside: avoid;
-        }
-        
-        .step-content li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        
-        /* Tecnologias */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .tech-category {
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .tech-category h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-category h3 i {
-            color: var(--accent-color);
-        }
-        
-        .tech-category ul {
-            list-style: none;
-        }
-        
-        .tech-category li {
-            padding: 0.3rem 0;
-        }
-        
-        /* Resultados */
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .result-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-        }
-        
-        .result-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Formulário de Contato */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-info ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-info li {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-info .icon {
-            margin-right: 1rem;
-            color: var(--primary-color);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-        
-        .social-icon:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
-            font-family: var(--font-main);
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        button[type="submit"] {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 1rem;
-            transition: var(--transition);
-            font-weight: 600;
-            width: 100%;
-        }
-        
-        button[type="submit"]:hover {
-            background: var(--secondary-color);
-        }
-        
-        #formStatus {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            display: none;
-        }
-        
-        .success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid var(--success-color);
-        }
-        
-        .error {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid var(--error-color);
-        }
-        
-        /* Rodapé */
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: white;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .copyright {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        /* SEO Hidden Content - Apenas para motores de busca */
-        .hidden {
-            position: absolute;
-            left: -10000px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-        
-        /* Responsividade - Tablet (768px) */
-        @media (max-width: 768px) {
-            #header {
-                padding-top: 90px;
-            }
-            
-            #header .content h1 {
-                font-size: 2rem;
-            }
-            
-            #header .content p {
-                font-size: 1.1rem;
-            }
-            
-            .major {
-                font-size: 2rem;
-            }
-            
-            .step {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .step-header {
-                flex-direction: row;
-                gap: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .step-content ul {
-                columns: 1;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Responsividade - Smartphone (480px) */
-        @media (max-width: 480px) {
-            #header {
-                padding-top: 80px;
-            }
-            
-            #header .logo {
-                width: 50px;
-                height: 50px;
-                top: 15px;
-                left: 15px;
-            }
-            
-            #header .content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .major {
-                font-size: 1.8rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .cta-buttons .button {
-                width: 100%;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        /* Estilos básicos serão incluídos no bloco final */
     </style>
 </head>
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Header otimizado -->
-        <header id="header">
-            <div class="logo">
-                <img src="images/logo.png" alt="Optimus Data - Especialistas em Business Intelligence" 
-                     onerror="this.onerror=null;this.src='https://manuelribeira.github.io/optimusdata/images/logo.png';"
-                     loading="lazy">
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Optimus Data" loading="lazy">
+        </div>
+        <div class="content">
+            <h1>Transforme Dados em Decisões Estratégicas</h1>
+            <p>Soluções completas em Business Intelligence e Análise Preditiva</p>
+            <div class="cta-buttons">
+                <a href="#servicos" class="button primary">Nossas Soluções</a>
+                <a href="#contact" class="button">Contacte-nos</a>
             </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Transforme Dados em Decisões Estratégicas</h1>
-                    <p>Soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para impulsionar seu negócio em Angola</p>
-                    <div class="cta-buttons">
-                        <a href="#servicos" class="button primary">Nossas Soluções</a>
-                        <a href="#contact" class="button">Contacte-nos</a>
-                    </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+        <section id="servicos" class="services-section">
+        <div class="container">
+            <h2 class="major">Nossos Serviços</h2>
+            
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>BI & Analytics Avançado</h3>
+                    <ul>
+                        <li>Implementação de Power BI e Tableau</li>
+                        <li>Visualizações interativas</li>
+                        <li>KPIs estratégicos</li>
+                    </ul>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>Data Science</h3>
+                    <ul>
+                        <li>Previsão de demanda</li>
+                        <li>Segmentação de clientes</li>
+                        <li>Detecção de fraudes</li>
+                    </ul>
                 </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#contact" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+        </div>
+    </section>
+        <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="major">Contacte-nos</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
+                        <li><i class="fas fa-phone"></i> +244 924 990 517</li>
+                        <li><i class="fas fa-envelope"></i> manuelribeira@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nome Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        <script>
+        // Formulário funcional
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Mensagem enviada!');
+                    this.reset();
+                }
+            })
+            .catch(error => alert('Erro no envio'));
+        });
 
-        <!-- Main Content -->
-        <div id="main">
-            <!-- Serviços Otimizados -->
-            <article id="servicos" class="active">
-                <section class="services-section">
-                    <div class="container">
-                        <h1 class="major">Soluções de Business Intelligence & Analytics</h1>
-                        <p class="service-intro">Na Optimus Data, somos especialistas em transformar dados complexos em <strong>insights acionáveis</strong> que impulsionam resultados tangíveis. Nossas soluções personalizadas combinam tecnologia de ponta com conhecimento profundo do mercado angolano para oferecer a você uma <strong>vantagem competitiva baseada em dados</strong>.</p>
-                        
-                        <div class="services-grid">
-                            <!-- Serviço 1 - BI Moderno -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-chart-line"></i></div>
-                                <h2>BI & Analytics Avançado</h2>
-                                <p>Dashboard inteligentes que revelam oportunidades escondidas nos seus dados:</p>
-                                <ul>
-                                    <li>Implementação de <strong>Power BI</strong> e Tableau sob medida</li>
-                                    <li>Visualizações interativas e autoatualizáveis</li>
-                                    <li>KPI's estratégicos para cada área do negócio</li>
-                                    <li>Integração com múltiplas fontes de dados</li>
-                                    <li>Relatórios automatizados para gestão ágil</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Tomada de decisão 3x mais rápida com visão 360° do seu negócio.</p>
-                                <div class="seo-content hidden">
-                                    <p>Consultoria em Business Intelligence em Luanda especializada em implementação de dashboards interativos com Power BI e Tableau. Soluções de análise de dados personalizadas para empresas em Angola que precisam de relatórios automatizados e visualização de dados eficiente.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Serviço 2 - Data Science -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-brain"></i></div>
-                                <h2>Data Science & Machine Learning</h2>
-                                <p>Algoritmos preditivos que antecipam tendências e comportamentos:</p>
-                                <ul>
-                                    <li>Previsão de demanda com 90% de acurácia</li>
-                                    <li>Segmentação avançada de clientes</li>
-                                    <li>Detecção de fraudes em tempo real</li>
-                                    <li>Análise de sentimentos em redes sociais</li>
-                                    <li>Modelos de <strong>churn prediction</strong> personalizados</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Redução de 40% nos riscos operacionais e identificação de oportunidades antes da concorrência.</p>
-                                <div class="seo-content hidden">
-                                    <p>Serviços de Data Science em Angola com Machine Learning para previsão de demanda, análise de clientes e detecção de fraudes. Implementamos modelos preditivos personalizados para empresas que desejam antecipar tendências de mercado.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Serviço 3 - Automação -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-robot"></i></div>
-                                <h2>Automação & ETL com Python</h2>
-                                <p>Soluções personalizadas para otimizar processos de dados:</p>
-                                <ul>
-                                    <li>Web scraping inteligente para coleta de dados</li>
-                                    <li>Pipelines ETL (Extract, Transform, Load) robustos</li>
-                                    <li>Automação de relatórios complexos</li>
-                                    <li>Integração entre sistemas desconectados</li>
-                                    <li>Processamento de grandes volumes de dados</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Redução de 70% no tempo de processamento de dados e eliminação de erros manuais.</p>
-                                <div class="seo-content hidden">
-                                    <p>Automação de processos de dados em Luanda com Python e ETL. Desenvolvemos soluções personalizadas para integração de sistemas, web scraping e processamento de grandes volumes de dados para empresas em Angola.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Serviço 4 - Análise Preditiva -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-crystal-ball"></i></div>
-                                <h2>Análise Preditiva & Prescritiva</h2>
-                                <p>Vá além dos relatórios históricos com projeções precisas:</p>
-                                <ul>
-                                    <li>Modelos de séries temporais para previsão de mercado</li>
-                                    <li>Simulação de cenários estratégicos</li>
-                                    <li>Otimização de preços dinâmicos</li>
-                                    <li>Gestão preditiva de estoque e logística</li>
-                                    <li>Análise de impacto de decisões</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Aumento de 25% na eficiência operacional com decisões baseadas em projeções confiáveis.</p>
-                                <div class="seo-content hidden">
-                                    <p>Análise preditiva em Angola para previsão de mercado e otimização de preços. Oferecemos modelos de séries temporais e simulação de cenários para ajudar empresas a tomar decisões baseadas em dados com maior confiança.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Serviço 5 - Consultoria -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-chess"></i></div>
-                                <h2>Estratégia & Governança de Dados</h2>
-                                <p>Transforme dados em ativo estratégico:</p>
-                                <ul>
-                                    <li>Diagnóstico de maturidade analítica</li>
-                                    <li>Roadmap de implementação de BI</li>
-                                    <li>Arquitetura de dados corporativa</li>
-                                    <li>Governança e qualidade de dados</li>
-                                    <li>Conformidade com LGPD e segurança</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Estrutura de dados escalável que suporta o crescimento do negócio.</p>
-                                <div class="seo-content hidden">
-                                    <p>Consultoria em governança de dados em Luanda para empresas que precisam estruturar sua estratégia de dados. Implementamos arquiteturas corporativas e políticas de qualidade de dados alinhadas com a LGPD.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Serviço 6 - Treinamentos -->
-                            <div class="service-card">
-                                <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                                <h2>Capacitação & Data Literacy</h2>
-                                <p>Empodere sua equipe para a cultura data-driven:</p>
-                                <ul>
-                                    <li>Power BI para tomadores de decisão</li>
-                                    <li>Python para análise de dados</li>
-                                    <li>Excel avançado para gestores</li>
-                                    <li>Workshops de data literacy</li>
-                                    <li>Treinamentos in-company sob medida</li>
-                                </ul>
-                                <p class="service-benefit"><strong>Resultado:</strong> Equipe autônoma na extração de insights estratégicos dos dados.</p>
-                                <div class="seo-content hidden">
-                                    <p>Treinamentos em Business Intelligence e análise de dados em Angola. Cursos de Power BI, Python e Excel avançado para empresas que desejam capacitar suas equipes na cultura data-driven.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="sectors-section">
-                            <h3>Setores que Transformamos com Dados</h3>
-                            <div class="sectors-grid">
-                                <div class="sector">
-                                    <h4><i class="fas fa-university"></i> Sector Financeiro</h4>
-                                    <p>Soluções para bancos e seguradoras: scoring de crédito adaptado ao mercado angolano, detecção de fraudes com IA e otimização de carteiras de investimento.</p>
-                                </div>
-                                <div class="sector">
-                                    <h4><i class="fas fa-shopping-cart"></i> Varejo & Distribuição</h4>
-                                    <p>Otimização de preços dinâmicos, gestão preditiva de estoque e análise de comportamento do consumidor para redes de supermercados e e-commerce.</p>
-                                </div>
-                                <div class="sector">
-                                    <h4><i class="fas fa-gas-pump"></i> Energia & Recursos Naturais</h4>
-                                    <p>Análise de dados de produção, manutenção preditiva de equipamentos e otimização logística para empresas do sector energético.</p>
-                                </div>
-                                <div class="sector">
-                                    <h4><i class="fas fa-mobile-alt"></i> Telecomunicações</h4>
-                                    <p>Redução de churn com machine learning, análise de padrão de uso e segmentação avançada de clientes para operadoras.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="cta-section">
-                            <h3>Pronto para transformar seus dados em vantagem competitiva?</h3>
-                            <p>Nossos especialistas estão prontos para ajudar sua empresa a extrair o máximo valor dos seus dados.</p>
-                            <a href="#contact" class="button primary large">Agende uma Consultoria Gratuita</a>
-                            <p class="small-text">+50 projetos entregues | ROI médio de 12-18 meses | Especialistas certificados</p>
-                        </div>
-                    </div>
-                </section>
-            </article>
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #004a99;
+    --accent-color: #00aaff;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+}
 
-            <!-- Metodologia Otimizada -->
-            <article id="metodologia">
-                <section class="methodology-section">
-                    <div class="container">
-                        <h1 class="major">Metodologia Data-Driven Comprovada</h1>
-                        <p class="methodology-intro">Na Optimus Data, desenvolvemos uma abordagem <strong>exclusiva e orientada a resultados</strong> que já ajudou dezenas de empresas em Angola a transformar dados em vantagem competitiva. Nossa metodologia combina as melhores práticas globais de <em>Data Science</em> com profundo conhecimento do mercado africano.</p>
-                        
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">1</span>
-                                <h3>Imersão no Negócio</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Entendemos profundamente seus desafios através de:</p>
-                                <ul>
-                                    <li>Workshops com stakeholders-chave</li>
-                                    <li>Análise de processos operacionais</li>
-                                    <li>Diagnóstico de maturidade analítica</li>
-                                    <li>Identificação de KPIs críticos</li>
-                                    <li>Mapeamento de fontes de dados</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Design Thinking, Canvas de Analytics, Python Pandas</p>
-                                <p class="service-benefit"><strong>Resultado:</strong> Definição clara de objetivos alinhados à estratégia do negócio.</p>
-                            </div>
-                        </div>
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">2</span>
-                                <h3>Engenharia de Dados</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Construímos a base de dados perfeita para análise:</p>
-                                <ul>
-                                    <li>Integração de fontes de dados dispersas</li>
-                                    <li>Limpeza e padronização automatizada</li>
-                                    <li>Pipeline de dados escalável</li>
-                                    <li>Armazenamento otimizado para análise</li>
-                                    <li>Governança e documentação</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Apache Airflow, PySpark, SQL, Azure Data Factory</p>
-                                <p class="service-benefit"><strong>Case Real:</strong> Redução de 80% no tempo de preparação de dados para um banco angolano.</p>
-                            </div>
-                        </div>
+#header {
+    padding-top: 120px;
+    text-align: center;
+}
 
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">3</span>
-                                <h3>Análise Avançada</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Extraímos insights poderosos dos seus dados:</p>
-                                <ul>
-                                    <li>Modelos preditivos personalizados</li>
-                                    <li>Análise de cenários e simulações</li>
-                                    <li>Segmentação avançada</li>
-                                    <li>Detecção de padrões e anomalias</li>
-                                    <li>Testes estatísticos rigorosos</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Scikit-learn, TensorFlow, XGBoost, R</p>
-                                <p class="service-benefit"><strong>Vantagem Competitiva:</strong> Algoritmos treinados com dados locais para máxima relevância.</p>
-                            </div>
-                        </div>
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
 
-                        <div class="step">
-                            <div class="step-header">
-                                <span class="step-number">4</span>
-                                <h3>Visualização Inteligente</h3>
-                            </div>
-                            <div class="step-content">
-                                <p>Transformamos complexidade em clareza:</p>
-                                <ul>
-                                    <li>Dashboards executivos intuitivos</li>
-                                    <li>Relatórios automatizados</li>
-                                    <li>Visualizações interativas</li>
-                                    <li>Soluções offline para áreas remotas</li>
-                                    <li>Mobile-friendly</li>
-                                </ul>
-                                <p><em>Tecnologias utilizadas:</em> Power BI, Tableau,
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #header { padding-top: 100px; }
+    .services-grid { grid-template-columns: 1fr; }
+}

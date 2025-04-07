@@ -1,22 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="pt-PT">
 <head>
-    <!-- Meta tags e cabeçalho existentes... -->
+    <!-- [Manter todas as meta tags e links existentes] -->
+    
     <style>
-        /* CORREÇÕES ESSENCIAIS */
+        /* ADIÇÕES E CORREÇÕES */
         
-        /* 1. BANNER VISÍVEL */
-        .hero-banner {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            color: white;
-            padding: 7rem 1rem 4rem; /* Ajustado para o header */
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-top: 80px; /* Compensa o header fixo */
-        }
-
-        /* 2. HEADER FIXO */
+        /* 1. HEADER FIXO CORRIGIDO */
         #header {
             position: fixed;
             top: 0;
@@ -24,23 +14,31 @@
             z-index: 1000;
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
         }
-
+        
+        /* 2. BANNER VISÍVEL */
+        .hero-banner {
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            padding: 120px 20px 60px; /* Ajustado para header fixo */
+            text-align: center;
+            margin-top: 60px; /* Compensa altura do header */
+        }
+        
         /* 3. FORMULÁRIO INTEGRADO */
         #contact {
             padding: 3rem 1rem;
             background: #f8f9fa;
             margin: 2rem auto 0;
-            max-width: 1200px;
         }
-
-        /* 4. AJUSTE DE FLUXO */
+        
+        /* 4. AJUSTES DE FLUXO */
         #main {
-            position: relative;
             padding-top: 0;
         }
-
-        /* Mantenha todos os outros estilos existentes */
+        
+        /* [Manter todos os outros estilos existentes] */
     </style>
 </head>
 <body class="is-preload">
@@ -48,7 +46,7 @@
     <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header Fixo -->
+        <!-- Header Fixo Corrigido -->
         <header id="header">
             <div class="logo">
                 <img src="images/logo.png" alt="Optimus Data">
@@ -65,65 +63,69 @@
         </header>
 
         <!-- Banner Visível -->
-        <section class="hero-banner" style="background: linear-gradient(135deg, #0066cc 0%, #004a99 100%)">
+        <section class="hero-banner">
             <div class="hero-content">
                 <h1>Transforme Dados em Decisões Estratégicas</h1>
                 <p>Soluções completas em Business Intelligence para Angola</p>
                 <div class="cta-buttons">
-                    <a href="#servicos" class="btn btn-primary">Nossas Soluções</a>
-                    <a href="#contact" class="btn btn-secondary">Contacte-nos</a>
+                    <a href="#servicos" class="button primary">Nossas Soluções</a>
+                    <a href="#contact" class="button">Contacte-nos</a>
                 </div>
             </div>
         </section>
 
-        <!-- Conteúdo Principal -->
+        <!-- Main Content -->
         <div id="main">
-
-            <!-- Seções existentes... -->
-            <article id="servicos">...</article>
-            <article id="cases">...</article>
-            <article id="metodologia">...</article>
-            <article id="sobre">...</article>
-            <article id="setores">...</article>
-
+            <!-- [Manter todo o conteúdo existente dos artigos] -->
+            
             <!-- Formulário Integrado -->
             <article id="contact">
                 <h2 class="major">Contacte a Nossa Equipa</h2>
-                <form id="contactForm" style="max-width:600px;margin:0 auto;background:white;padding:2rem;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.05)">
-                    <div class="form-group">
-                        <label>Nome Completo</label>
-                        <input type="text" placeholder="O seu nome" required>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Informações de Contacto</h3>
+                        <ul>
+                            <li><i class="icon fas fa-map-marker-alt"></i> Luanda, Angola</li>
+                            <li><i class="icon fas fa-phone"></i> +244 924 990 517</li>
+                            <li><i class="icon fas fa-envelope"></i> contacto@optimusdata.ao</li>
+                        </ul>
                     </div>
-                    <div class="form-group">
-                        <label>E-mail</label>
-                        <input type="email" placeholder="O seu e-mail" required>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm" method="POST">
+                            <div class="form-group">
+                                <label>Nome Completo</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Setor</label>
+                                <select required>
+                                    <option value="">Selecione...</option>
+                                    <option>Financeiro</option>
+                                    <option>Comércio</option>
+                                    <option>Energia</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensagem</label>
+                                <textarea rows="5" required></textarea>
+                            </div>
+                            <button type="submit">Enviar Mensagem</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label>Setor</label>
-                        <select required>
-                            <option value="">Selecione...</option>
-                            <option>Financeiro</option>
-                            <option>Comércio</option>
-                            <option>Energia</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Mensagem</label>
-                        <textarea rows="5" required></textarea>
-                    </div>
-                    <button type="submit" style="background:#00aaff;color:white;border:none;padding:12px 24px;border-radius:4px;cursor:pointer;width:100%">Enviar Mensagem</button>
-                </form>
+                </div>
             </article>
-
         </div>
 
-        <!-- Footer... -->
-
+        <!-- [Manter o footer existente] -->
     </div>
 
-    <!-- Scripts... -->
     <script>
-        // Suavizar rolagem para âncoras
+        // Suavizar rolagem considerando header fixo
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();

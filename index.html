@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,16 +23,31 @@ export default function OptimusDataPage() {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Mensagem enviada com sucesso!");
+
+    const response = await fetch("https://formspree.io/f/xzbnzbow", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("Mensagem enviada com sucesso!");
+    } else {
+      alert("Houve um erro ao enviar a mensagem. Tente novamente mais tarde.");
+    }
   };
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
       {/* Hero Section */}
       <section className="text-center space-y-4">
+        <div className="flex justify-center">
+          <Image src="/logo.png" alt="Optimus Data Logo" width={150} height={150} />
+        </div>
         <h1 className="text-4xl font-bold">Consultoria Especializada em Análise de Dados – Optimus Data</h1>
         <p className="text-xl text-gray-600">
           Desbloqueie o Potencial dos Seus Dados com Soluções Personalizadas de Business Intelligence, Machine Learning e Visualização Avançada.
@@ -39,6 +55,14 @@ export default function OptimusDataPage() {
         <Button className="text-lg" onClick={() => document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' })}>
           📩 Fale Connosco
         </Button>
+      </section>
+
+      {/* Quem Somos */}
+      <section className="space-y-4">
+        <h2 className="text-3xl font-semibold text-center">Quem Somos</h2>
+        <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+          A Optimus Data é uma consultora especializada em análise de dados com foco na criação de soluções inteligentes e personalizadas para empresas que procuram transformar os seus dados em valor. Combinamos tecnologia, conhecimento de negócio e uma abordagem centrada no cliente para entregar insights poderosos que impulsionam decisões estratégicas.
+        </p>
       </section>
 
       {/* Serviços */}
@@ -143,6 +167,7 @@ export default function OptimusDataPage() {
         <p className="flex items-center justify-center gap-2 mt-2">
           <Linkedin size={16} /> <a href="https://www.linkedin.com/company/optimusdata" target="_blank" rel="noopener noreferrer" className="text-blue-600">Siga-nos no LinkedIn</a>
         </p>
+        <p className="mt-4 text-sm text-gray-400">© {new Date().getFullYear()} Optimus Data. Todos os direitos reservados.</p>
       </footer>
     </div>
   );

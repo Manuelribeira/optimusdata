@@ -451,3 +451,56 @@
                                 <textarea id="message" name="message" placeholder="A sua mensagem" required></textarea>
                             </div>
                             <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Optimus Data. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Validação do formulário
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const sector = document.getElementById('sector').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // Validação de campos vazios
+            if (!name || !email || !sector || !message) {
+                event.preventDefault();
+                alert('Por favor, preencha todos os campos do formulário.');
+                return false;
+            }
+            
+            // Validação de e-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                event.preventDefault();
+                alert('Por favor, insira um endereço de e-mail válido.');
+                return false;
+            }
+            
+            // Feedback ao enviar
+            alert('Obrigado pela sua mensagem! Entraremos em contacto brevemente.');
+            return true;
+        });
+
+        // Suavizar rolagem para links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

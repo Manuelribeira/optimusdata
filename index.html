@@ -1,54 +1,321 @@
 <!DOCTYPE HTML>
 <html lang="pt-PT">
 <head>
-    <!-- [Manter TODAS as meta tags, title, scripts e links CSS existentes] -->
+    <title>Optimus Data | Consultoria em Business Intelligence & Análise de Dados</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="description" content="Líder em consultoria de dados em Angola. Soluções completas em BI, Machine Learning e Power BI para transformar seus dados em vantagem competitiva. +50 projetos entregues." />
+    <meta name="keywords" content="consultoria dados Luanda, business intelligence Angola, análise preditiva, Power BI consultor, machine learning empresas, dashboard analytics, transformação digital dados" />
+    <meta property="og:title" content="Optimus Data - Soluções Inteligentes em Análise de Dados" />
+    <meta property="og:image" content="https://manuelribeira.github.io/optimusdata/images/og-image.jpg" />
     
-    <!-- ADICIONAR APENAS ESTE ESTILO EXTRA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Optimus Data",
+      "description": "Consultoria especializada em análise de dados e business intelligence",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Luanda",
+        "addressCountry": "AO"
+      },
+      "telephone": "+244924990517",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS personalizado -->
     <style>
-        /* CORREÇÕES PARA BANNER E FORMULÁRIO */
-        
-        /* 1. HEADER FIXO */
-        #header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
+        /* Estilos gerais otimizados */
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #004a99;
+            --accent-color: #00aaff;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --success-color: #28a745;
         }
         
-        /* 2. BANNER ABAIXO DO HEADER */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .major {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .major:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        /* Banner no Topo */
         .hero-banner {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 100px 20px 60px;
+            padding: 5rem 0;
             text-align: center;
-            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
         }
         
-        /* 3. FORMULÁRIO INTEGRADO NATURALMENTE */
-        #contact {
-            padding: 4rem 1rem;
-            background: var(--light-bg);
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
         }
         
-        /* 4. COMPENSAR HEADER FIXO */
-        #main {
-            padding-top: 0;
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Seção: Setores que Transformamos */
+        .sectors-section {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .sector-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sector-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Seção de Contacto */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        #contactForm {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-weight: 600;
+        }
+        
+        .btn-submit:hover {
+            background: #0088cc;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-banner h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-banner p {
+                font-size: 1rem;
+            }
+            
+            .major {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-banner {
+                padding: 3rem 0;
+            }
+            
+            .hero-banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body class="is-preload">
 
-    <!-- Wrapper (MANTIDO IGUAL) -->
+    <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header (ATUALIZADO PARA FIXO) -->
+        <!-- Banner no Topo -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Transforme Dados em Decisões Estratégicas</h1>
+                <p>Soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para impulsionar o seu negócio em Angola</p>
+                <div class="cta-buttons">
+                    <a href="#servicos" class="btn btn-primary">As Nossas Soluções</a>
+                    <a href="#contact" class="btn btn-secondary">Fale Connosco</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Header -->
         <header id="header">
             <div class="logo">
                 <img src="images/logo.png" alt="Optimus Data - Especialistas em Business Intelligence" 
-                     onerror="this.onerror=null;this.src='https://manuelribeira.github.io/optimusdata/images/logo.png'">
+                     onerror="this.onerror=null;this.src='https://manuelribeira.github.io/optimusdata/images/logo.png';"
+                     onerror="this.onerror=null;this.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text x=\'10\' y=\'50\' font-size=\'30\'>Optimus</text></svg>';"
+                     onerror="this.onerror=null;this.textContent='Optimus Data';">
             </div>
             <nav>
                 <ul>
@@ -56,85 +323,171 @@
                     <li><a href="#cases" class="nav-link">Cases</a></li>
                     <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- BANNER NOVO (ADICIONADO APÓS O HEADER) -->
-        <section class="hero-banner">
-            <div class="inner">
-                <h1>Transforme Dados em Decisões Estratégicas</h1>
-                <p>Soluções completas em <strong>Business Intelligence</strong> para Angola</p>
-                <div class="cta-buttons">
-                    <a href="#servicos" class="button primary">Nossas Soluções</a>
-                    <a href="#contact" class="button">Fale Conosco</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Content (MANTIDO ORIGINAL) -->
+        <!-- Main Content -->
         <div id="main">
-            <!-- [MANTER TODOS OS ARTIGOS EXISTENTES] -->
-            
-            <!-- ARTICLE CONTACT (ATUALIZADO) -->
-            <article id="contact">
-                <h2 class="major">Fale Conosco</h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Informações de Contato</h3>
-                        <ul>
-                            <li>
-                                <i class="icon fas fa-map-marker-alt"></i>
-                                <span>Luanda, Angola</span>
-                            </li>
-                            <li>
-                                <i class="icon fas fa-phone"></i>
-                                <span>+244 924 990 517</span>
-                            </li>
-                            <li>
-                                <i class="icon fas fa-envelope"></i>
-                                <span>contacto@optimusdata.ao</span>
-                            </li>
-                        </ul>
+
+            <!-- Serviços -->
+            <article id="servicos" class="active">
+                <!-- Conteúdo existente dos serviços -->
+                <!-- ... -->
+            </article>
+
+            <!-- Cases de Sucesso -->
+            <article id="cases">
+                <h2 class="major">Cases de Sucesso</h2>
+                <p>Conteúdo dos cases aqui...</p>
+            </article>
+
+            <!-- Metodologia -->
+            <article id="metodologia">
+                <!-- Conteúdo existente da metodologia -->
+                <!-- ... -->
+            </article>
+
+            <!-- Sobre Nós -->
+            <article id="sobre">
+                <h2 class="major">Sobre Nós</h2>
+                <p>Conteúdo sobre a empresa aqui...</p>
+            </article>
+
+            <!-- Seção: Setores que Transformamos -->
+            <article id="setores">
+                <section class="sectors-section">
+                    <div class="container">
+                        <h2 class="major">Setores que Transformamos com Dados</h2>
+                        <div class="sectors-grid">
+                            <!-- Setor Financeiro -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Financeiro</h3>
+                                <p>Otimização de riscos, deteção de fraudes e personalização de serviços bancários através de analytics avançado.</p>
+                            </div>
+                            
+                            <!-- Comércio -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h3>Comércio</h3>
+                                <p>Previsão de procura, gestão de inventário e experiências personalizadas para o consumidor.</p>
+                            </div>
+                            
+                            <!-- Energia -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Energia</h3>
+                                <p>Otimização de redes elétricas, manutenção preditiva e gestão de recursos energéticos.</p>
+                            </div>
+                            
+                            <!-- Telecomunicações -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-tower-cell"></i>
+                                </div>
+                                <h3>Telecomunicações</h3>
+                                <p>Melhoria da qualidade de serviço, redução de churn e otimização de redes.</p>
+                            </div>
+                            
+                            <!-- Saúde -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <h3>Saúde</h3>
+                                <p>Diagnóstico assistido, gestão hospitalar e pesquisa médica com IA.</p>
+                            </div>
+                            
+                            <!-- Manufatura -->
+                            <div class="sector-card">
+                                <div class="sector-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h3>Manufatura</h3>
+                                <p>Manutenção preditiva, controlo de qualidade automatizado e otimização da cadeia de suprimentos.</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="contact-form">
-                        <form id="contactForm" method="POST">
+                </section>
+            </article>
+
+            <!-- Seção de Contacto -->
+            <article id="contact">
+                <section class="contact-section">
+                    <div class="container">
+                        <h2 class="major">Fale Connosco</h2>
+                        <form id="contactForm" action="/submit-form" method="POST">
                             <div class="form-group">
-                                <label for="name">Nome Completo*</label>
-                                <input type="text" id="name" name="name" required>
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="O seu nome" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email*</label>
-                                <input type="email" id="email" name="email" required>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="O seu e-mail" required>
                             </div>
                             <div class="form-group">
-                                <label for="sector">Setor*</label>
+                                <label for="sector">Setor de Atividade</label>
                                 <select id="sector" name="sector" required>
-                                    <option value="">Selecione...</option>
+                                    <option value="">Selecione o seu setor</option>
                                     <option value="financeiro">Financeiro</option>
                                     <option value="comercio">Comércio</option>
                                     <option value="energia">Energia</option>
+                                    <option value="telecomunicacoes">Telecomunicações</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="manufatura">Manufatura</option>
+                                    <option value="outro">Outro</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Mensagem*</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" placeholder="A sua mensagem" required></textarea>
                             </div>
-                            <button type="submit" class="button primary">Enviar Mensagem</button>
-                        </form>
+                       <!-- Formulário Integrado -->
+            <article id="contact">
+                <h2 class="major">Contacte a Nossa Equipa</h2>
+                <form id="contactForm" style="max-width:600px;margin:0 auto;background:white;padding:2rem;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.05)">
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="O seu nome" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="O seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Setor</label>
+                        <select required>
+                            <option value="">Selecione...</option>
+                            <option>Financeiro</option>
+                            <option>Comércio</option>
+                            <option>Energia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea rows="5" required></textarea>
+                    </div>
+                    <button type="submit" style="background:#00aaff;color:white;border:none;padding:12px 24px;border-radius:4px;cursor:pointer;width:100%">Enviar Mensagem</button>
+                </form>
             </article>
+
         </div>
 
-        <!-- [MANTER FOOTER EXISTENTE] -->
+        <!-- Footer... -->
+
     </div>
 
-    <!-- SCRIPTS (COM ROLAGEM SUAVE) -->
+    <!-- Scripts... -->
     <script>
-        // Rolagem suave compensando header fixo
+        // Suavizar rolagem para âncoras
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -146,14 +499,6 @@
                     });
                 }
             });
-        });
-
-        // Validação do formulário
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            if (!this.checkValidity()) {
-                e.preventDefault();
-                alert('Por favor, preencha todos os campos obrigatórios.');
-            }
         });
     </script>
 </body>

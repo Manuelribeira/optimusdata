@@ -1,506 +1,149 @@
-<!DOCTYPE HTML>
-<html lang="pt-PT">
-<head>
-    <title>Optimus Data | Consultoria em Business Intelligence & Análise de Dados</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-    <meta name="description" content="Líder em consultoria de dados em Angola. Soluções completas em BI, Machine Learning e Power BI para transformar seus dados em vantagem competitiva. +50 projetos entregues." />
-    <meta name="keywords" content="consultoria dados Luanda, business intelligence Angola, análise preditiva, Power BI consultor, machine learning empresas, dashboard analytics, transformação digital dados" />
-    <meta property="og:title" content="Optimus Data - Soluções Inteligentes em Análise de Dados" />
-    <meta property="og:image" content="https://manuelribeira.github.io/optimusdata/images/og-image.jpg" />
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Optimus Data",
-      "description": "Consultoria especializada em análise de dados e business intelligence",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Luanda",
-        "addressCountry": "AO"
-      },
-      "telephone": "+244924990517",
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "priceRange": "$$$"
-    }
-    </script>
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Mail, Phone, Linkedin } from "lucide-react";
 
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-    
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS personalizado -->
-    <style>
-        /* Estilos gerais otimizados */
-        :root {
-            --primary-color: #0066cc;
-            --secondary-color: #004a99;
-            --accent-color: #00aaff;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --success-color: #28a745;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .major {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .major:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--accent-color);
-        }
-        
-        /* Banner no Topo */
-        .hero-banner {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-banner h1 {
-            font-size: 2.8rem;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background: rgba(255,255,255,0.9);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-        
-        /* Seção: Setores que Transformamos */
-        .sectors-section {
-            padding: 5rem 0;
-            background-color: var(--light-bg);
-        }
-        
-        .sectors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .sector-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            text-align: center;
-            border-top: 4px solid var(--primary-color);
-        }
-        
-        .sector-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .sector-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Seção de Contacto */
-        .contact-section {
-            padding: 5rem 0;
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .contact-section h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-        
-        #contactForm {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .btn-submit {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
-            font-weight: 600;
-        }
-        
-        .btn-submit:hover {
-            background: #0088cc;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hero-banner h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-banner p {
-                font-size: 1rem;
-            }
-            
-            .major {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-banner {
-                padding: 3rem 0;
-            }
-            
-            .hero-banner h1 {
-                font-size: 1.8rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body class="is-preload">
+export default function OptimusDataPage() {
+  const [formData, setFormData] = useState({
+    nome: "",
+    empresa: "",
+    email: "",
+    telefone: "924990517",
+    servico: "",
+    mensagem: "",
+    consentimento: false,
+  });
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+  const handleChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
+  };
 
-        <!-- Banner no Topo -->
-        <section class="hero-banner">
-            <div class="hero-content">
-                <h1>Transforme Dados em Decisões Estratégicas</h1>
-                <p>Soluções completas em <strong>Business Intelligence</strong> e <strong>Análise Preditiva</strong> para impulsionar o seu negócio em Angola</p>
-                <div class="cta-buttons">
-                    <a href="#servicos" class="btn btn-primary">As Nossas Soluções</a>
-                    <a href="#contact" class="btn btn-secondary">Fale Connosco</a>
-                </div>
-            </div>
-        </section>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    alert("Mensagem enviada com sucesso!");
+  };
 
-        <!-- Header -->
-        <header id="header">
-            <div class="logo">
-                <img src="images/logo.png" alt="Optimus Data - Especialistas em Business Intelligence" 
-                     onerror="this.onerror=null;this.src='https://manuelribeira.github.io/optimusdata/images/logo.png';"
-                     onerror="this.onerror=null;this.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text x=\'10\' y=\'50\' font-size=\'30\'>Optimus</text></svg>';"
-                     onerror="this.onerror=null;this.textContent='Optimus Data';">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#cases" class="nav-link">Cases</a></li>
-                    <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#contact" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+  return (
+    <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
+      {/* Hero Section */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Consultoria Especializada em Análise de Dados – Optimus Data</h1>
+        <p className="text-xl text-gray-600">
+          Desbloqueie o Potencial dos Seus Dados com Soluções Personalizadas de Business Intelligence, Machine Learning e Visualização Avançada.
+        </p>
+        <Button className="text-lg" onClick={() => document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' })}>
+          📩 Fale Connosco
+        </Button>
+      </section>
 
-        <!-- Main Content -->
-        <div id="main">
+      {/* Serviços */}
+      <section className="space-y-12">
+        <h2 className="text-3xl font-semibold text-center">Os Nossos Serviços</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold">Análise de Dados e Business Intelligence (BI)</h3>
+              <p>Transformamos dados complexos em insights acionáveis com dashboards interativos e relatórios personalizados em Power BI, Tableau ou Qlik. Ajudamos as empresas a tomarem decisões estratégicas baseadas em dados reais e atualizados.</p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Criação de dashboards em Power BI, Tableau, Qlik</li>
+                <li>Desenvolvimento de KPIs personalizados</li>
+                <li>Monitorização de performance empresarial</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-            <!-- Serviços -->
-            <article id="servicos" class="active">
-                <!-- Conteúdo existente dos serviços -->
-                <!-- ... -->
-            </article>
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold">Machine Learning & Predictive Analytics</h3>
+              <p>Desenvolvemos modelos preditivos e algoritmos de machine learning para prever comportamentos, tendências de mercado e padrões de consumo. Reduza riscos e maximize oportunidades com análises avançadas.</p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Modelos de previsão de vendas</li>
+                <li>Classificação e segmentação de clientes</li>
+                <li>Deteção de fraudes e anomalias</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-            <!-- Cases de Sucesso -->
-            <article id="cases">
-                <h2 class="major">Cases de Sucesso</h2>
-                <p>Conteúdo dos cases aqui...</p>
-            </article>
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold">Limpeza e Preparação de Dados (ETL)</h3>
+              <p>Garantimos que os seus dados são limpos, consistentes e prontos para análise. Automatizamos processos de extração, transformação e carregamento (ETL) para que os seus dados estejam sempre atualizados.</p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Remoção de duplicados e inconsistências</li>
+                <li>Integração de dados de múltiplas fontes</li>
+                <li>Automatização de pipelines de dados</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-            <!-- Metodologia -->
-            <article id="metodologia">
-                <!-- Conteúdo existente da metodologia -->
-                <!-- ... -->
-            </article>
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold">Visualização de Dados Avançada</h3>
+              <p>Criamos visualizações que facilitam a compreensão de informação complexa. Ajudamos a sua equipa a explorar dados com facilidade através de gráficos interativos e relatórios visuais.</p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Dashboards intuitivos e interativos</li>
+                <li>Storytelling com dados</li>
+                <li>Visualizações adaptadas a dispositivos móveis</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-            <!-- Sobre Nós -->
-            <article id="sobre">
-                <h2 class="major">Sobre Nós</h2>
-                <p>Conteúdo sobre a empresa aqui...</p>
-            </article>
-
-            <!-- Seção: Setores que Transformamos -->
-            <article id="setores">
-                <section class="sectors-section">
-                    <div class="container">
-                        <h2 class="major">Setores que Transformamos com Dados</h2>
-                        <div class="sectors-grid">
-                            <!-- Setor Financeiro -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h3>Financeiro</h3>
-                                <p>Otimização de riscos, deteção de fraudes e personalização de serviços bancários através de analytics avançado.</p>
-                            </div>
-                            
-                            <!-- Comércio -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <h3>Comércio</h3>
-                                <p>Previsão de procura, gestão de inventário e experiências personalizadas para o consumidor.</p>
-                            </div>
-                            
-                            <!-- Energia -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
-                                <h3>Energia</h3>
-                                <p>Otimização de redes elétricas, manutenção preditiva e gestão de recursos energéticos.</p>
-                            </div>
-                            
-                            <!-- Telecomunicações -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-tower-cell"></i>
-                                </div>
-                                <h3>Telecomunicações</h3>
-                                <p>Melhoria da qualidade de serviço, redução de churn e otimização de redes.</p>
-                            </div>
-                            
-                            <!-- Saúde -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-heartbeat"></i>
-                                </div>
-                                <h3>Saúde</h3>
-                                <p>Diagnóstico assistido, gestão hospitalar e pesquisa médica com IA.</p>
-                            </div>
-                            
-                            <!-- Manufatura -->
-                            <div class="sector-card">
-                                <div class="sector-icon">
-                                    <i class="fas fa-industry"></i>
-                                </div>
-                                <h3>Manufatura</h3>
-                                <p>Manutenção preditiva, controlo de qualidade automatizado e otimização da cadeia de suprimentos.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <!-- Seção de Contacto -->
-            <article id="contact">
-                <section class="contact-section">
-                    <div class="container">
-                        <h2 class="major">Fale Connosco</h2>
-                        <form id="contactForm" action="/submit-form" method="POST">
-                            <div class="form-group">
-                                <label for="name">Nome Completo</label>
-                                <input type="text" id="name" name="name" placeholder="O seu nome" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="O seu e-mail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sector">Setor de Atividade</label>
-                                <select id="sector" name="sector" required>
-                                    <option value="">Selecione o seu setor</option>
-                                    <option value="financeiro">Financeiro</option>
-                                    <option value="comercio">Comércio</option>
-                                    <option value="energia">Energia</option>
-                                    <option value="telecomunicacoes">Telecomunicações</option>
-                                    <option value="saude">Saúde</option>
-                                    <option value="manufatura">Manufatura</option>
-                                    <option value="outro">Outro</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensagem</label>
-                                <textarea id="message" name="message" placeholder="A sua mensagem" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                        </form>
-                    </div>
-                </section>
-            </article>
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold">Consultoria em Big Data</h3>
+              <p>Fornecemos soluções escaláveis para grandes volumes de dados, com recurso a tecnologias como Hadoop, Spark e serviços cloud (AWS, Azure). Ajudamos a sua empresa a processar e analisar big data com eficiência.</p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>Arquiteturas de dados escaláveis</li>
+                <li>Implementação de clusters Hadoop/Spark</li>
+                <li>Consultoria em soluções cloud (AWS, Azure, GCP)</li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
+      </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Optimus Data. Todos os direitos reservados.</p>
-        </footer>
+      {/* Formulário */}
+      <section id="formulario" className="space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Pronto para Potencializar os Seus Dados?</h2>
+        <form onSubmit={handleSubmit} className="grid gap-4 max-w-3xl mx-auto">
+          <Input placeholder="Nome*" value={formData.nome} onChange={(e) => handleChange("nome", e.target.value)} required />
+          <Input placeholder="Empresa*" value={formData.empresa} onChange={(e) => handleChange("empresa", e.target.value)} required />
+          <Input type="email" placeholder="E-mail*" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
+          <Input placeholder="Telefone" value={formData.telefone} onChange={(e) => handleChange("telefone", e.target.value)} />
+          <Select onValueChange={(value) => handleChange("servico", value)} required>
+            <SelectTrigger>
+              <SelectValue placeholder="Serviço de Interesse*" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Analise de Dados">Análise de Dados</SelectItem>
+              <SelectItem value="BI">Business Intelligence</SelectItem>
+              <SelectItem value="Machine Learning">Machine Learning</SelectItem>
+              <SelectItem value="Big Data">Big Data</SelectItem>
+              <SelectItem value="Outro">Outro</SelectItem>
+            </SelectContent>
+          </Select>
+          <Textarea placeholder="Descreva as suas necessidades em análise de dados..." value={formData.mensagem} onChange={(e) => handleChange("mensagem", e.target.value)} required />
+          <div className="flex items-center space-x-2">
+            <Checkbox id="gdpr" checked={formData.consentimento} onCheckedChange={(checked) => handleChange("consentimento", checked)} required />
+            <label htmlFor="gdpr" className="text-sm">Aceito a política de privacidade e receber comunicações da Optimus Data.</label>
+          </div>
+          <Button type="submit" className="text-lg">➡ Enviar Mensagem</Button>
+        </form>
+      </section>
+
+      {/* Rodapé */}
+      <footer className="pt-12 text-center text-gray-500 border-t mt-16">
+        <p className="flex items-center justify-center gap-2"><Mail size={16} /> manuelribeira@gmail.com</p>
+        <p className="flex items-center justify-center gap-2 mt-2"><Phone size={16} /> +244 923 456 789</p>
+        <p className="flex items-center justify-center gap-2 mt-2">
+          <Linkedin size={16} /> <a href="https://www.linkedin.com/company/optimusdata" target="_blank" rel="noopener noreferrer" className="text-blue-600">Siga-nos no LinkedIn</a>
+        </p>
+      </footer>
     </div>
-
-    <!-- Scripts -->
-    <script>
-        // Validação do formulário
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const sector = document.getElementById('sector').value;
-            const message = document.getElementById('message').value.trim();
-            
-            // Validação de campos vazios
-            if (!name || !email || !sector || !message) {
-                event.preventDefault();
-                alert('Por favor, preencha todos os campos do formulário.');
-                return false;
-            }
-            
-            // Validação de e-mail
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                event.preventDefault();
-                alert('Por favor, insira um endereço de e-mail válido.');
-                return false;
-            }
-            
-            // Feedback ao enviar
-            alert('Obrigado pela sua mensagem! Entraremos em contacto brevemente.');
-            return true;
-        });
-
-        // Suavizar rolagem para links âncora
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+  );
+}

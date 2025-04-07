@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="pt-PT">
 <head>
-    <!-- [Manter todas as meta tags e links existentes] -->
+    <!-- [Manter TODAS as meta tags, title, scripts e links CSS existentes] -->
     
+    <!-- ADICIONAR APENAS ESTE ESTILO EXTRA -->
     <style>
-        /* ADIÇÕES E CORREÇÕES */
+        /* CORREÇÕES PARA BANNER E FORMULÁRIO */
         
-        /* 1. HEADER FIXO CORRIGIDO */
+        /* 1. HEADER FIXO */
         #header {
             position: fixed;
             top: 0;
@@ -17,115 +18,123 @@
             padding: 15px 0;
         }
         
-        /* 2. BANNER VISÍVEL */
+        /* 2. BANNER ABAIXO DO HEADER */
         .hero-banner {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 120px 20px 60px; /* Ajustado para header fixo */
+            padding: 100px 20px 60px;
             text-align: center;
-            margin-top: 60px; /* Compensa altura do header */
+            margin-top: 60px;
         }
         
-        /* 3. FORMULÁRIO INTEGRADO */
+        /* 3. FORMULÁRIO INTEGRADO NATURALMENTE */
         #contact {
-            padding: 3rem 1rem;
-            background: #f8f9fa;
-            margin: 2rem auto 0;
+            padding: 4rem 1rem;
+            background: var(--light-bg);
         }
         
-        /* 4. AJUSTES DE FLUXO */
+        /* 4. COMPENSAR HEADER FIXO */
         #main {
             padding-top: 0;
         }
-        
-        /* [Manter todos os outros estilos existentes] */
     </style>
 </head>
 <body class="is-preload">
 
-    <!-- Wrapper -->
+    <!-- Wrapper (MANTIDO IGUAL) -->
     <div id="wrapper">
 
-        <!-- Header Fixo Corrigido -->
+        <!-- Header (ATUALIZADO PARA FIXO) -->
         <header id="header">
             <div class="logo">
-                <img src="images/logo.png" alt="Optimus Data">
+                <img src="images/logo.png" alt="Optimus Data - Especialistas em Business Intelligence" 
+                     onerror="this.onerror=null;this.src='https://manuelribeira.github.io/optimusdata/images/logo.png'">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#cases">Cases</a></li>
-                    <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#cases" class="nav-link">Cases</a></li>
+                    <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Banner Visível -->
+        <!-- BANNER NOVO (ADICIONADO APÓS O HEADER) -->
         <section class="hero-banner">
-            <div class="hero-content">
+            <div class="inner">
                 <h1>Transforme Dados em Decisões Estratégicas</h1>
-                <p>Soluções completas em Business Intelligence para Angola</p>
+                <p>Soluções completas em <strong>Business Intelligence</strong> para Angola</p>
                 <div class="cta-buttons">
                     <a href="#servicos" class="button primary">Nossas Soluções</a>
-                    <a href="#contact" class="button">Contacte-nos</a>
+                    <a href="#contact" class="button">Fale Conosco</a>
                 </div>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Main Content (MANTIDO ORIGINAL) -->
         <div id="main">
-            <!-- [Manter todo o conteúdo existente dos artigos] -->
+            <!-- [MANTER TODOS OS ARTIGOS EXISTENTES] -->
             
-            <!-- Formulário Integrado -->
+            <!-- ARTICLE CONTACT (ATUALIZADO) -->
             <article id="contact">
-                <h2 class="major">Contacte a Nossa Equipa</h2>
+                <h2 class="major">Fale Conosco</h2>
                 <div class="contact-container">
                     <div class="contact-info">
-                        <h3>Informações de Contacto</h3>
+                        <h3>Informações de Contato</h3>
                         <ul>
-                            <li><i class="icon fas fa-map-marker-alt"></i> Luanda, Angola</li>
-                            <li><i class="icon fas fa-phone"></i> +244 924 990 517</li>
-                            <li><i class="icon fas fa-envelope"></i> contacto@optimusdata.ao</li>
+                            <li>
+                                <i class="icon fas fa-map-marker-alt"></i>
+                                <span>Luanda, Angola</span>
+                            </li>
+                            <li>
+                                <i class="icon fas fa-phone"></i>
+                                <span>+244 924 990 517</span>
+                            </li>
+                            <li>
+                                <i class="icon fas fa-envelope"></i>
+                                <span>contacto@optimusdata.ao</span>
+                            </li>
                         </ul>
                     </div>
                     
                     <div class="contact-form">
                         <form id="contactForm" method="POST">
                             <div class="form-group">
-                                <label>Nome Completo</label>
-                                <input type="text" required>
+                                <label for="name">Nome Completo*</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" required>
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label>Setor</label>
-                                <select required>
+                                <label for="sector">Setor*</label>
+                                <select id="sector" name="sector" required>
                                     <option value="">Selecione...</option>
-                                    <option>Financeiro</option>
-                                    <option>Comércio</option>
-                                    <option>Energia</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="comercio">Comércio</option>
+                                    <option value="energia">Energia</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Mensagem</label>
-                                <textarea rows="5" required></textarea>
+                                <label for="message">Mensagem*</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit">Enviar Mensagem</button>
+                            <button type="submit" class="button primary">Enviar Mensagem</button>
                         </form>
                     </div>
                 </div>
             </article>
         </div>
 
-        <!-- [Manter o footer existente] -->
+        <!-- [MANTER FOOTER EXISTENTE] -->
     </div>
 
+    <!-- SCRIPTS (COM ROLAGEM SUAVE) -->
     <script>
-        // Suavizar rolagem considerando header fixo
+        // Rolagem suave compensando header fixo
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -137,6 +146,14 @@
                     });
                 }
             });
+        });
+
+        // Validação do formulário
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            if (!this.checkValidity()) {
+                e.preventDefault();
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
         });
     </script>
 </body>

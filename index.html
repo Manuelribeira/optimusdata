@@ -17,21 +17,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ================= CORREÇÕES ESSENCIAIS ================= */
-        /* 1. Garante que todas as seções são visíveis quando ativas */
-        #main article {
-            display: none;
+    /* Ajuste do header para posicionar logo e título corretamente */
+        #header {
+            position: relative;
+            padding-top: 4rem; /* Espaço para o logo */
         }
         
-        #main article.active {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            position: relative !important;
-            height: auto !important;
-            overflow: visible !important;
+        .logo {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
         }
-
-        /* 2. Estilos para os serviços (versão corrigida) */
+        
+        .logo-img {
+            max-height: 80px;
+            width: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .content {
+            margin-top: 1rem; /* Espaço entre logo e conteúdo */
+        }
+        
+        /* ================= ESTILOS DOS SERVIÇOS ================= */
         .service-card {
             background: white;
             padding: 2rem;
@@ -42,92 +54,7 @@
             color: #333;
         }
 
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 i {
-            margin-right: 10px;
-        }
-
-        .service-card p, 
-        .service-card ul {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .service-card ul {
-            padding-left: 1.5rem;
-        }
-
-        .service-card ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .service-features {
-            margin: 1.5rem 0;
-        }
-
-        .feature {
-            background: rgba(0, 106, 204, 0.05);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 3px solid #0066cc;
-        }
-
-        .feature h5 {
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature h5 i {
-            margin-right: 8px;
-        }
-
-        .tech-list {
-            columns: 2;
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .tech-list li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.8rem;
-            break-inside: avoid;
-        }
-
-        .tech-list .fa-check {
-            color: #00aaff;
-            position: absolute;
-            left: 0;
-            top: 0.4rem;
-        }
-
-        blockquote {
-            background: #f8f9fa;
-            border-left: 4px solid #0066cc;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-        }
-
-        blockquote strong {
-            color: #0066cc;
-        }
-
-        /* 3. Ajustes de responsive design */
-        @media screen and (max-width: 768px) {
-            .tech-list {
-                columns: 1;
-            }
-            
-            .service-card {
-                padding: 1.5rem;
-            }
-        }
+        /* ... (mantenha o resto do CSS que já estava) ... */
     </style>
 </head>
 <body class="is-preload">
@@ -156,8 +83,48 @@
             </nav>
         </header>
 
-        <!-- Main -->
-        <div id="main">
+        <!-- ... (mantenha o resto do HTML que já estava) ... -->
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ajuste de altura do header baseado no logo
+        const logo = document.querySelector('.logo-img');
+        if (logo) {
+            const logoHeight = logo.offsetHeight;
+            document.getElementById('header').style.paddingTop = (logoHeight + 20) + 'px';
+        }
+        
+        // Sistema de navegação
+        var firstArticle = document.querySelector('#main article');
+        if (firstArticle) {
+            firstArticle.classList.add('active');
+        }
+        
+        var links = document.querySelectorAll('nav a');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href').substring(1);
+                var articles = document.querySelectorAll('#main article');
+                articles.forEach(function(article) {
+                    article.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
 
             <!-- ================= SERVIÇOS (VERSÃO CORRIGIDA) ================= -->
             <article id="servicos">

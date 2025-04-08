@@ -16,33 +16,34 @@
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ================= CORREÇÕES ESSENCIAIS ================= */
-        /* Ajuste do header para posicionar logo e título corretamente */
+        /* ================= CORREÇÕES PARA O LOGO ================= */
         #header {
             position: relative;
-            padding-top: 4rem; /* Espaço para o logo */
+            padding-top: 6rem; /* Espaço aumentado para o logo */
         }
         
         .logo {
             position: absolute;
-            top: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+            top: 1.5rem;
+            left: 0;
+            right: 0;
             text-align: center;
+            z-index: 10;
+            width: 100%;
         }
         
         .logo-img {
             max-height: 80px;
             width: auto;
+            display: inline-block;
             margin: 0 auto;
-            display: block;
         }
         
+        /* Ajuste para o conteúdo abaixo do logo */
         .content {
-            margin-top: 1rem; /* Espaço entre logo e conteúdo */
+            margin-top: 2rem;
         }
-        
+
         /* ================= ESTILOS DOS SERVIÇOS ================= */
         .service-card {
             background: white;
@@ -130,7 +131,7 @@
             color: #0066cc;
         }
 
-        /* 3. Ajustes de responsive design */
+        /* Ajustes de responsive design */
         @media screen and (max-width: 768px) {
             .tech-list {
                 columns: 1;
@@ -138,6 +139,14 @@
             
             .service-card {
                 padding: 1.5rem;
+            }
+            
+            #header {
+                padding-top: 5rem;
+            }
+            
+            .logo-img {
+                max-height: 60px;
             }
         }
     </style>
@@ -321,11 +330,19 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Ajuste de altura do header baseado no logo
+        // Ajuste de posicionamento do logo
+        const header = document.getElementById('header');
         const logo = document.querySelector('.logo-img');
+        
         if (logo) {
+            // Centralização dinâmica
+            const logoContainer = document.querySelector('.logo');
+            logoContainer.style.left = '50%';
+            logoContainer.style.transform = 'translateX(-50%)';
+            
+            // Ajuste de altura do header
             const logoHeight = logo.offsetHeight;
-            document.getElementById('header').style.paddingTop = (logoHeight + 20) + 'px';
+            header.style.paddingTop = (logoHeight + 40) + 'px';
         }
         
         // Sistema de navegação

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ================= CORREÇÕES ESSENCIAIS ================= */
-    /* Ajuste do header para posicionar logo e título corretamente */
+        /* Ajuste do header para posicionar logo e título corretamente */
         #header {
             position: relative;
             padding-top: 4rem; /* Espaço para o logo */
@@ -54,7 +54,92 @@
             color: #333;
         }
 
-        /* ... (mantenha o resto do CSS que já estava) ... */
+        .service-card h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 i {
+            margin-right: 10px;
+        }
+
+        .service-card p, 
+        .service-card ul {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-card ul {
+            padding-left: 1.5rem;
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-features {
+            margin: 1.5rem 0;
+        }
+
+        .feature {
+            background: rgba(0, 106, 204, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #0066cc;
+        }
+
+        .feature h5 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature h5 i {
+            margin-right: 8px;
+        }
+
+        .tech-list {
+            columns: 2;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tech-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.8rem;
+            break-inside: avoid;
+        }
+
+        .tech-list .fa-check {
+            color: #00aaff;
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+        }
+
+        blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #0066cc;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        blockquote strong {
+            color: #0066cc;
+        }
+
+        /* 3. Ajustes de responsive design */
+        @media screen and (max-width: 768px) {
+            .tech-list {
+                columns: 1;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -83,50 +168,10 @@
             </nav>
         </header>
 
-        <!-- ... (mantenha o resto do HTML que já estava) ... -->
+        <!-- Main -->
+        <div id="main">
 
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Ajuste de altura do header baseado no logo
-        const logo = document.querySelector('.logo-img');
-        if (logo) {
-            const logoHeight = logo.offsetHeight;
-            document.getElementById('header').style.paddingTop = (logoHeight + 20) + 'px';
-        }
-        
-        // Sistema de navegação
-        var firstArticle = document.querySelector('#main article');
-        if (firstArticle) {
-            firstArticle.classList.add('active');
-        }
-        
-        var links = document.querySelectorAll('nav a');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var targetId = this.getAttribute('href').substring(1);
-                var articles = document.querySelectorAll('#main article');
-                articles.forEach(function(article) {
-                    article.classList.remove('active');
-                });
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    });
-    </script>
-
-</body>
-</html>
-
-            <!-- ================= SERVIÇOS (VERSÃO CORRIGIDA) ================= -->
+            <!-- ================= SERVIÇOS ================= -->
             <article id="servicos">
                 <h2 class="major">Os Nossos Serviços</h2>
                 <span class="image main"><img src="images/data-analysis.jpg" alt="Análise de Dados"></span>
@@ -197,12 +242,21 @@
                 <h2 class="major">A Nossa Metodologia</h2>
                 <span class="image main"><img src="images/methodology.jpg" alt="Metodologia"></span>
                 
-                <h3>1.Diagnóstico de Maturidade Analítica (Auditoria de Dados)</h3>
-                <p>2.Engenharia de Dados & Preparação</p>
-                <p>3. Análise Preditiva & Machine Learning</p>
-		<p>5. Manutenção</p>
-           
-                </article>
+                <h3>1. Diagnóstico de Maturidade Analítica (Auditoria de Dados)</h3>
+                <p>Identificamos o estágio atual da sua empresa na jornada de transformação digital e definimos um roadmap personalizado.</p>
+                
+                <h3>2. Engenharia de Dados & Preparação</h3>
+                <p>Construímos pipelines de dados robustos para garantir informações confiáveis e prontas para análise.</p>
+                
+                <h3>3. Análise Preditiva & Machine Learning</h3>
+                <p>Desenvolvemos modelos preditivos que antecipam tendências e oportunidades para o seu negócio.</p>
+                
+                <h3>4. Implementação & Treinamento</h3>
+                <p>Garantimos a adoção eficaz das soluções com treinamento prático para sua equipe.</p>
+                
+                <h3>5. Manutenção & Melhoria Contínua</h3>
+                <p>Monitoramento constante e atualizações para manter sua vantagem competitiva.</p>
+            </article>
 
             <!-- ================= SOBRE NÓS ================= -->
             <article id="sobre">
@@ -210,6 +264,9 @@
                 <span class="image main"><img src="images/team.jpg" alt="Equipe Optimus Data"></span>
                 <p>A Optimus Data é uma consultoria especializada em Business Intelligence e Análise de Dados com sede em Luanda, Angola. A nossa equipa combina conhecimento técnico avançado com profunda compreensão do mercado africano.</p>
                 <p>Com mais de 50 projetos implementados em diversos setores, ajudamos empresas a tomar decisões mais inteligentes baseadas em dados concretos e análises preditivas precisas.</p>
+                
+                <h3>Nossa Missão</h3>
+                <p>Democratizar o acesso a tecnologias de análise de dados em Angola, transformando informações em vantagem competitiva para nossos clientes.</p>
             </article>
 
             <!-- ================= CONTACTO ================= -->
@@ -240,7 +297,7 @@
                     <p><i class="fas fa-phone-alt"></i> +244 924 990 517</p>
                     <p><i class="fas fa-envelope"></i> manuelribeira@gmail.com</p>
                     <ul class="icons">
-                        <li><a href="#" class="icon brands fa-linkedin"><span class="label">https://www.linkedin.com/company/theoptimusdatacompany</span></a></li>
+                        <li><a href="https://www.linkedin.com/company/theoptimusdatacompany" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
                         <li><a href="https://wa.me/244924990517" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
                     </ul>
                 </div>
@@ -250,7 +307,7 @@
 
         <!-- Footer -->
         <footer id="footer">
-            <p class="copyright">&copy; Optimus Data 2025.</p>
+            <p class="copyright">&copy; Optimus Data 2025. Todos os direitos reservados.</p>
         </footer>
 
     </div>
@@ -262,17 +319,21 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     
-    <!-- Script de Correção -->
     <script>
-    // Garante que a seção ativa está visível
     document.addEventListener('DOMContentLoaded', function() {
-        // Ativa a primeira aba por padrão
+        // Ajuste de altura do header baseado no logo
+        const logo = document.querySelector('.logo-img');
+        if (logo) {
+            const logoHeight = logo.offsetHeight;
+            document.getElementById('header').style.paddingTop = (logoHeight + 20) + 'px';
+        }
+        
+        // Sistema de navegação
         var firstArticle = document.querySelector('#main article');
         if (firstArticle) {
             firstArticle.classList.add('active');
         }
         
-        // Correção para o sistema de navegação
         var links = document.querySelectorAll('nav a');
         links.forEach(function(link) {
             link.addEventListener('click', function(e) {

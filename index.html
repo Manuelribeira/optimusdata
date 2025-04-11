@@ -1,369 +1,682 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="pt-PT">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Optimus Data | Business Intelligence em Angola</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Líder em consultoria de dados em Angola. Soluções completas em BI, Machine Learning e Power BI para transformar dados em vantagem competitiva. +50 projetos entregues." />
-    <meta name="keywords" content="consultoria dados Luanda, business intelligence Angola, análise preditiva, Power BI consultor, machine learning empresas" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-       
-       /* ================= CORREÇÕES PARA O LOGO ================= */
-#header {
-    position: relative;
-    padding-top: 6rem; /* Espaço aumentado para o logo */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimus Data - Transforme seus Dados em Insights Acionáveis</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1E3D59',secondary:'#57B5E7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
 }
-
-.logo {
-    position: absolute;
-    top: 1.5rem;
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta precisamente o centro */
-    z-index: 10;
-    width: auto; /* Remove a largura fixa de 100% */
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20data%20visualization%20background%20with%20blue%20gradient%20on%20the%20right%20side%2C%20clean%20white%20space%20on%20the%20left%20side%20for%20text%2C%20abstract%20digital%20patterns%2C%20technology%20theme%2C%20professional%20corporate%20style%2C%20high%20quality%2C%20detailed&width=1920&height=800&seq=123456&orientation=landscape');
+background-size: cover;
+background-position: center;
 }
-
-.logo-img {
-    max-height: 80px;
-    width: auto;
-    display: block; /* Muda de inline-block para block */
-    margin: 0 auto; /* Centraliza a imagem dentro do container */
+input:focus, textarea:focus {
+outline: none;
 }
-        
-        /* Ajuste para o conteúdo abaixo do logo */
-        .content {
-            margin-top: 2rem;
-        }
-
-        /* ================= ESTILOS DOS SERVIÇOS ================= */
-        .service-card {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #0066cc;
-            color: #333;
-        }
-
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 i {
-            margin-right: 10px;
-        }
-
-        .service-card p, 
-        .service-card ul {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .service-card ul {
-            padding-left: 1.5rem;
-        }
-
-        .service-card ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .service-features {
-            margin: 1.5rem 0;
-        }
-
-        .feature {
-            background: rgba(0, 106, 204, 0.05);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 3px solid #0066cc;
-        }
-
-        .feature h5 {
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature h5 i {
-            margin-right: 8px;
-        }
-
-        .tech-list {
-            columns: 2;
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .tech-list li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.8rem;
-            break-inside: avoid;
-        }
-
-        .tech-list .fa-check {
-            color: #00aaff;
-            position: absolute;
-            left: 0;
-            top: 0.4rem;
-        }
-
-        blockquote {
-            background: #f8f9fa;
-            border-left: 4px solid #0066cc;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-        }
-
-        blockquote strong {
-            color: #0066cc;
-        }
-
-        /* Ajustes de responsive design */
-        @media screen and (max-width: 768px) {
-            .tech-list {
-                columns: 1;
-            }
-            
-            .service-card {
-                padding: 1.5rem;
-            }
-            
-            #header {
-                padding-top: 5rem;
-            }
-            
-            .logo-img {
-                max-height: 60px;
-            }
-        }
-    </style>
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #1E3D59;
+border-radius: 4px;
+}
+.custom-checkbox.checked:after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.custom-switch-track {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.custom-switch-thumb {
+position: absolute;
+height: 20px;
+width: 20px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+.custom-switch.active .custom-switch-track {
+background-color: #1E3D59;
+}
+.custom-switch.active .custom-switch-thumb {
+transform: translateX(24px);
+}
+</style>
 </head>
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Header -->
-        <header id="header">
-            <div class="logo">
-                <img src="images/logo.png" alt="Optimus Data" class="logo-img">
-            </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Optimus Data</h1>
-                    <p>Transforme dados em decisões estratégicas</p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Main -->
-        <div id="main">
-
-            <!-- ================= SERVIÇOS ================= -->
-            <article id="servicos">
-                <h2 class="major">Os Nossos Serviços</h2>
-                <span class="image main"><img src="images/data-analysis.jpg" alt="Análise de Dados"></span>
-                
-                <!-- Serviço 1 -->
-                <div class="service-card">
-                    <h3><i class="fas fa-chart-line"></i> BI & Analytics Avançado</h3>
-                    <p>Dashboards inteligentes que revelam oportunidades escondidas nos seus dados:</p>
-                    <ul>
-                        <li>Implementação de <strong>Power BI</strong> e Tableau sob medida</li>
-                        <li>Visualizações interativas e autoatualizáveis</li>
-                        <li>KPIs estratégicos para cada área do negócio</li>
-                    </ul>
-                    <blockquote><strong>Resultado:</strong> Tomada de decisão 3x mais rápida com visão 360° do seu negócio.</blockquote>
-                </div>
-                
-                <!-- Serviço 2 -->
-                <div class="service-card">
-                    <h3><i class="fas fa-brain"></i> Data Science & Machine Learning</h3>
-                    <p><strong>Algoritmos preditivos de última geração</strong> que antecipam tendências de mercado e comportamentos de clientes com precisão cirúrgica.</p>
-                    
-                    <div class="service-features">
-                        <h4>As Nossas Soluções Exclusivas:</h4>
-                        
-                        <div class="feature">
-                            <h5><i class="fas fa-chart-line"></i> Previsão de Procura com 90% de Precisão</h5>
-                            <ul>
-                                <li><strong>Tecnologia:</strong> Modelos ARIMA e Redes Neurais LSTM</li>
-                                <li><strong>Benefícios:</strong>
-                                    <ul>
-                                        <li>Otimize stocks e produção com previsões semanais/mensais</li>
-                                        <li>Reduza custos operacionais em até <strong>35%</strong></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="feature">
-                            <h5><i class="fas fa-users"></i> Segmentação Avançada de Clientes</h5>
-                            <ul>
-                                <li><strong>Metodologia:</strong> Algoritmos K-Means e DBSCAN</li>
-                                <li><strong>Vantagens:</strong>
-                                    <ul>
-                                        <li>Campanhas de marketing com <strong>ROI 3x superior</strong></li>
-                                        <li>Redução de <strong>churn em 40%</strong></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="technology-stack">
-                        <h4>Tecnologias que Utilizamos:</h4>
-                        <ul class="tech-list">
-                            <li><i class="fas fa-check"></i> TensorFlow, PyTorch</li>
-                            <li><i class="fas fa-check"></i> Spark MLlib</li>
-                            <li><i class="fas fa-check"></i> Power BI Embedded</li>
-                            <li><i class="fas fa-check"></i> Python (Pandas, NumPy)</li>
-                            <li><i class="fas fa-check"></i> SQL Server, PostgreSQL</li>
-                            <li><i class="fas fa-check"></i> Azure Machine Learning</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- ================= METODOLOGIA ================= -->
-            <article id="metodologia">
-                <h2 class="major">A Nossa Metodologia</h2>
-                <span class="image main"><img src="images/methodology.jpg" alt="Metodologia"></span>
-                
-                <h3>1. Diagnóstico de Maturidade Analítica (Auditoria de Dados)</h3>
-                <p>Identificamos o estágio atual da sua empresa na jornada de transformação digital e definimos um roadmap personalizado.</p>
-                
-                <h3>2. Engenharia de Dados & Preparação</h3>
-                <p>Construímos pipelines de dados robustos para garantir informações confiáveis e prontas para análise.</p>
-                
-                <h3>3. Análise Preditiva & Machine Learning</h3>
-                <p>Desenvolvemos modelos preditivos que antecipam tendências e oportunidades para o seu negócio.</p>
-                
-                <h3>4. Visualização & Tomada de Decisão</h3>
-                <p> Resultados mensuráveis,conteúdo optimizado,usamos dashboards interativos .</p>
-                
-                <h3>5. Manutenção & Melhoria Contínua</h3>
-                <p>Monitoramento constante e atualizações para manter sua vantagem competitiva.</p>
-            </article>
-
-            <!-- ================= SOBRE NÓS ================= -->
-            <article id="sobre">
-                <h2 class="major">Sobre Nós</h2>
-                <span class="image main"><img src="images/team.jpg" alt="Equipe Optimus Data"></span>
-                <p>A Optimus Data é uma consultoria especializada em Business Intelligence e Análise de Dados com sede em Luanda, Angola. A nossa equipa combina conhecimento técnico avançado com profunda compreensão do mercado africano.</p>
-                <p>Com mais de 50 projetos implementados em diversos setores, ajudamos empresas a tomar decisões mais inteligentes baseadas em dados concretos e análises preditivas precisas.</p>
-                
-                <h3>A nossa Missão</h3>
-                <p>Democratizar o acesso a tecnologias de análise de dados em Angola, transformando informações em vantagem competitiva para nossos clientes.</p>
-            </article>
-
-            <!-- ================= CONTACTO ================= -->
-            <article id="contacto">
-                <h2 class="major">Contacte-nos</h2>
-                <form id="contactForm" action="https://formspree.io/f/mrbpovyy" method="POST">
-                    <div class="fields">
-                        <div class="field half">
-                            <label for="name">Nome</label>
-                            <input type="text" name="name" id="name" required />
-                        </div>
-                        <div class="field half">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required />
-                        </div>
-                        <div class="field">
-                            <label for="message">Mensagem</label>
-                            <textarea name="message" id="message" rows="4" required></textarea>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Enviar Mensagem" class="primary" /></li>
-                        <li><input type="reset" value="Limpar" /></li>
-                    </ul>
-                </form>
-                
-                <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> +244 924 990 517</p>
-                    <p><i class="fas fa-envelope"></i> manuelribeira@gmail.com</p>
-                    <ul class="icons">
-                        <li><a href="https://www.linkedin.com/company/theoptimusdatacompany" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="https://wa.me/244924990517" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-                    </ul>
-                </div>
-            </article>
-
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Optimus Data 2025. Todos os direitos reservados.</p>
-        </footer>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Ajuste de posicionamento do logo
-        const header = document.getElementById('header');
-        const logo = document.querySelector('.logo-img');
-        
-        if (logo) {
-            // Centralização dinâmica
-            const logoContainer = document.querySelector('.logo');
-            logoContainer.style.left = '50%';
-            logoContainer.style.transform = 'translateX(-50%)';
-            
-            // Ajuste de altura do header
-            const logoHeight = logo.offsetHeight;
-            header.style.paddingTop = (logoHeight + 40) + 'px';
-        }
-        
-        // Sistema de navegação
-        var firstArticle = document.querySelector('#main article');
-        if (firstArticle) {
-            firstArticle.classList.add('active');
-        }
-        
-        var links = document.querySelectorAll('nav a');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var targetId = this.getAttribute('href').substring(1);
-                var articles = document.querySelectorAll('#main article');
-                articles.forEach(function(article) {
-                    article.classList.remove('active');
-                });
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    });
-    </script>
-
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="flex items-center">
+<span class="text-3xl font-['Pacifico'] text-primary">logo</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Início</a>
+<a href="#about" class="text-gray-800 font-medium hover:text-primary transition-colors">Sobre</a>
+<a href="#services" class="text-gray-800 font-medium hover:text-primary transition-colors">Serviços</a>
+<a href="#portfolio" class="text-gray-800 font-medium hover:text-primary transition-colors">Portfólio</a>
+<a href="#contact" class="text-gray-800 font-medium hover:text-primary transition-colors">Contacto</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Começar</button>
+</nav>
+<!-- Mobile Menu Button -->
+<div class="md:hidden w-10 h-10 flex items-center justify-center">
+<button id="mobile-menu-button" class="text-gray-800">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Início</a>
+<a href="#about" class="text-gray-800 font-medium hover:text-primary transition-colors">Sobre</a>
+<a href="#services" class="text-gray-800 font-medium hover:text-primary transition-colors">Serviços</a>
+<a href="#portfolio" class="text-gray-800 font-medium hover:text-primary transition-colors">Portfólio</a>
+<a href="#contact" class="text-gray-800 font-medium hover:text-primary transition-colors">Contacto</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap w-full">Começar</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-screen flex items-center pt-24">
+<div class="container mx-auto px-6 py-16 w-full">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-12 md:mb-0">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+Transforme seus Dados em <span class="text-primary">Insights Acionáveis</span>
+</h1>
+<p class="text-lg text-gray-700 mb-8 max-w-lg">
+A Optimus Data ajuda empresas a aproveitar o poder dos seus dados através de análises avançadas, machine learning e ferramentas intuitivas de visualização.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Agendar Demonstração
+</button>
+<button class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+Saber Mais
+</button>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<!-- Floating statistics -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg">
+<h3 class="text-4xl font-bold text-primary mb-2">98%</h3>
+<p class="text-gray-700">Taxa de satisfação dos clientes</p>
+</div>
+<div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg">
+<h3 class="text-4xl font-bold text-primary mb-2">250+</h3>
+<p class="text-gray-700">Projetos concluídos</p>
+</div>
+<div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg">
+<h3 class="text-4xl font-bold text-primary mb-2">35%</h3>
+<p class="text-gray-700">Aumento médio do ROI</p>
+</div>
+<div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg">
+<h3 class="text-4xl font-bold text-primary mb-2">15+</h3>
+<p class="text-gray-700">Anos de experiência</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
+<p class="text-lg text-gray-700 max-w-2xl mx-auto">
+Oferecemos soluções abrangentes de dados adaptadas às necessidades do seu negócio
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:transform hover:scale-105">
+<div class="p-8">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-bar-chart-grouped-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Inteligência de Negócios</h3>
+<p class="text-gray-700 mb-6">
+Transforme dados brutos em insights significativos com dashboards e relatórios personalizados que impulsionam a tomada de decisões estratégicas.
+</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Saber Mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:transform hover:scale-105">
+<div class="p-8">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-line-chart-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Análise Preditiva</h3>
+<p class="text-gray-700 mb-6">
+Aproveite algoritmos de machine learning para prever tendências, identificar oportunidades e mitigar riscos antes que ocorram.
+</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Saber Mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:transform hover:scale-105">
+<div class="p-8">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-database-2-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Integração de Dados</h3>
+<p class="text-gray-700 mb-6">
+Conecte perfeitamente diferentes fontes de dados para criar uma visão unificada das suas operações comerciais e interações com clientes.
+</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Saber Mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Sobre a Optimus Data</h2>
+<p class="text-lg text-gray-700 mb-6">
+Fundada em 2010, a Optimus Data tem estado na vanguarda da revolução dos dados, ajudando empresas de diversos setores a desbloquear todo o potencial dos seus ativos de informação.
+</p>
+<p class="text-lg text-gray-700 mb-6">
+A nossa missão é democratizar a ciência dos dados, tornando a análise avançada acessível a organizações de todos os tamanhos. Acreditamos que a tomada de decisões baseada em dados deve ser a base de toda estratégia empresarial de sucesso.
+</p>
+<p class="text-lg text-gray-700 mb-8">
+Com uma equipa de mais de 120 cientistas de dados, engenheiros e especialistas em visualização, trazemos uma vasta experiência e inovação para cada projeto.
+</p>
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Conheça Nossa Equipa
+</button>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Company Timeline</h3>
+<div class="space-y-6">
+<div class="flex">
+<div class="mr-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-flag-line"></i>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900">2010</h4>
+<p class="text-gray-700">Founded in San Francisco</p>
+</div>
+</div>
+<div class="flex">
+<div class="mr-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-award-line"></i>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900">2015</h4>
+<p class="text-gray-700">Recognized as Top 10 Data Analytics Firm</p>
+</div>
+</div>
+<div class="flex">
+<div class="mr-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-global-line"></i>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900">2018</h4>
+<p class="text-gray-700">Expanded to Europe and Asia</p>
+</div>
+</div>
+<div class="flex">
+<div class="mr-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-rocket-line"></i>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900">2023</h4>
+<p class="text-gray-700">Launched Optimus AI Platform</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+<p class="text-lg text-gray-700 max-w-2xl mx-auto">
+Explore how we've helped organizations transform their data into competitive advantages
+</p>
+</div>
+<!-- Portfolio Filter -->
+<div class="flex flex-wrap justify-center mb-12 gap-4">
+<button class="px-6 py-2 !rounded-button bg-primary text-white font-medium whitespace-nowrap">All</button>
+<button class="px-6 py-2 !rounded-button bg-white border border-gray-300 text-gray-700 font-medium whitespace-nowrap">Healthcare</button>
+<button class="px-6 py-2 !rounded-button bg-white border border-gray-300 text-gray-700 font-medium whitespace-nowrap">Finance</button>
+<button class="px-6 py-2 !rounded-button bg-white border border-gray-300 text-gray-700 font-medium whitespace-nowrap">Retail</button>
+<button class="px-6 py-2 !rounded-button bg-white border border-gray-300 text-gray-700 font-medium whitespace-nowrap">Manufacturing</button>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case Study 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=healthcare%20data%20dashboard%20visualization%20with%20medical%20charts%20and%20graphs%2C%20clean%20professional%20design%2C%20blue%20color%20scheme%2C%20modern%20interface&width=600&height=400&seq=123457&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<i class="ri-hospital-line text-blue-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900">MediCorp Health</h3>
+</div>
+<p class="text-gray-700 mb-4">
+Implemented predictive analytics to reduce patient readmission rates by 32% while optimizing resource allocation.
+</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Healthcare</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=financial%20data%20visualization%20dashboard%20with%20stock%20charts%2C%20investment%20metrics%2C%20professional%20banking%20interface%2C%20blue%20and%20white%20theme&width=600&height=400&seq=123458&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<i class="ri-bank-line text-blue-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900">Global Finance Partners</h3>
+</div>
+<p class="text-gray-700 mb-4">
+Developed a real-time fraud detection system that increased prevention rates by 47% and saved $4.2M annually.
+</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Finance</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=retail%20analytics%20dashboard%20showing%20customer%20behavior%20patterns%2C%20sales%20metrics%2C%20inventory%20management%2C%20modern%20e-commerce%20interface&width=600&height=400&seq=123459&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<i class="ri-store-2-line text-blue-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900">ShopSmart Retail</h3>
+</div>
+<p class="text-gray-700 mb-4">
+Created a customer segmentation model that increased marketing ROI by 28% and boosted quarterly sales by 15%.
+</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Retail</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<div class="mt-20">
+<h3 class="text-2xl font-bold text-gray-900 text-center mb-12">What Our Clients Say</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">
+"Optimus Data transformed our approach to customer insights. Their predictive models have been instrumental in our growth strategy."
+</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+<div>
+<h4 class="font-bold text-gray-900">Jennifer Wilson</h4>
+<p class="text-gray-600 text-sm">CMO, TechNova Inc.</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">
+"The team at Optimus Data doesn't just provide analytics – they deliver actionable intelligence that has measurably improved our decision-making."
+</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+<div>
+<h4 class="font-bold text-gray-900">Michael Rodriguez</h4>
+<p class="text-gray-600 text-sm">CIO, Global Finance Partners</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">
+"Working with Optimus Data has been a game-changer for our supply chain optimization. Their insights have reduced our operational costs by 23%."
+</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+<div>
+<h4 class="font-bold text-gray-900">Sarah Thompson</h4>
+<p class="text-gray-600 text-sm">VP Operations, IndusTech Manufacturing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+<p class="text-lg text-gray-700 max-w-2xl mx-auto">
+Ready to transform your data strategy? Contact us today to schedule a consultation.
+</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Contact Form -->
+<div class="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+<form>
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="your.email@example.com">
+</div>
+<div class="mb-6">
+<label for="company" class="block text-gray-700 font-medium mb-2">Company</label>
+<input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your company name">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="How can we help you?"></textarea>
+</div>
+<div class="mb-6 flex items-center">
+<div id="privacy-checkbox" class="custom-checkbox mr-3 cursor-pointer"></div>
+<label for="privacy-checkbox" class="text-gray-700 cursor-pointer">I agree to the privacy policy and terms of service</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+<!-- Contact Information -->
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 mb-1">Headquarters</h4>
+<p class="text-gray-700">
+123 Data Drive, Suite 400<br>
+San Francisco, CA 94105
+</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 mb-1">Email</h4>
+<p class="text-gray-700">
+info@optimusdata.com<br>
+support@optimusdata.com
+</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 mb-1">Phone</h4>
+<p class="text-gray-700">
++1 (415) 555-0123<br>
++1 (800) 555-0124
+</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-bold text-gray-900 mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Map -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden h-64">
+<div class="w-full h-full" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="flex items-center mb-6">
+<span class="text-3xl font-['Pacifico'] text-white">logo</span>
+</a>
+<p class="text-gray-400 mb-6">
+Transforming data into actionable insights for businesses worldwide.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Predictive Analytics</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Integration</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Machine Learning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Visualization</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="text-lg font-bold mb-6">Subscribe to Our Newsletter</h4>
+<p class="text-gray-400 mb-4">
+Stay updated with the latest in data analytics and AI.
+</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l border-none text-gray-900">
+<button type="submit" class="bg-primary px-4 py-2 rounded-r !rounded-button whitespace-nowrap">
+Subscribe
+</button>
+</div>
+</form>
+<div class="flex items-center space-x-3">
+<span class="text-gray-400">We accept:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">
+&copy; 2025 Optimus Data. All rights reserved.
+</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Cookies Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Custom Checkbox
+const privacyCheckbox = document.getElementById('privacy-checkbox');
+privacyCheckbox.addEventListener('click', function() {
+this.classList.toggle('checked');
+this.classList.toggle('bg-primary');
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scroll to top for Home links
+const homeLinks = document.querySelectorAll('a[href="#"]');
+homeLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+});
+</script>
 </body>
 </html>

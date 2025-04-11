@@ -16,28 +16,28 @@
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ================= CORREÇÕES PARA O LOGO ================= */
-        #header {
-            position: relative;
-            padding-top: 6rem; /* Espaço aumentado para o logo */
-        }
-        
-        .logo {
-            position: absolute;
-            top: 1.5rem;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-            width: 100%;
-        }
-        
-        .logo-img {
-            max-height: 80px;
-            width: auto;
-            display: inline-block;
-            margin: 0 auto;
-        }
+       
+       /* ================= CORREÇÕES PARA O LOGO ================= */
+#header {
+    position: relative;
+    padding-top: 6rem; /* Espaço aumentado para o logo */
+}
+
+.logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta precisamente o centro */
+    z-index: 10;
+    width: auto; /* Remove a largura fixa de 100% */
+}
+
+.logo-img {
+    max-height: 80px;
+    width: auto;
+    display: block; /* Muda de inline-block para block */
+    margin: 0 auto; /* Centraliza a imagem dentro do container */
+}
         
         /* Ajuste para o conteúdo abaixo do logo */
         .content {
